@@ -901,198 +901,198 @@ if text then
 if (text == "قفل التاك") then
 local tsX_o = database:get("lock_tag:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل التاك")
+tsX000("lock",msg,"❌┇بالفعل تم قفل التاك")
 else
-tsX000("lock",msg,"☑┇تم قفل التاك")
+tsX000("lock",msg,"❌┇تم قفل التاك")
 database:set("lock_tag:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الشارحه") then
 local tsX_o = database:get("lock_sarha:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الشارحه")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الشارحه")
 else
-tsX000("lock",msg,"☑┇تم قفل الشارحه")
+tsX000("lock",msg,"❌┇تم قفل الشارحه")
 database:set("lock_sarha:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل تعديل الميديا") then
 local tsX_o = database:get("madmax:lo:edit:new:"..bot_id..msg.chat_id_)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل تعديل الميديا")
+tsX000("lock",msg,"❌┇بالفعل تم قفل تعديل الميديا")
 else
-tsX000("lock",msg,"☑┇تم قفل تعديل الميديا")
+tsX000("lock",msg,"❌┇تم قفل تعديل الميديا")
 database:set("madmax:lo:edit:new:"..bot_id..msg.chat_id_,"ok")
 end
 end
 if (text == "قفل الكلايش") then
 local tsX_o = database:get("lock_word:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الكلايش")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الكلايش")
 else
-tsX000("lock",msg,"☑┇تم قفل الكلايش")
+tsX000("lock",msg,"❌┇تم قفل الكلايش")
 database:set("lock_word:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل التعديل") then
 local tsX_o = database:get("lock_edit:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل التعديل")
+tsX000("lock",msg,"❌┇بالفعل تم قفل التعديل")
 else
-tsX000("lock",msg,"☑┇تم قفل التعديل")
+tsX000("lock",msg,"❌┇تم قفل التعديل")
 database:set("lock_edit:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل التكرار") then
 local tsX_o = database:get("lock_lllll:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل التكرار")
+tsX000("lock",msg,"❌┇بالفعل تم قفل التكرار")
 else
-tsX000("lock",msg,"☑┇تم قفل التكرار")
+tsX000("lock",msg,"❌┇تم قفل التكرار")
 database:set("lock_lllll:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل المتحركه") then
 local tsX_o = database:get("lock_gif:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل المتحركه")
+tsX000("lock",msg,"❌┇بالفعل تم قفل المتحركه")
 else
-tsX000("lock",msg,"☑┇تم قفل المتحركه")
+tsX000("lock",msg,"❌┇تم قفل المتحركه")
 database:set("lock_gif:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الملفات") then
 local tsX_o = database:get("lock_files:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الملفات")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الملفات")
 else
-tsX000("lock",msg,"☑┇تم قفل الملفات")
+tsX000("lock",msg,"❌┇تم قفل الملفات")
 database:set("lock_files:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الماركدون") then
 local tsX_o = database:get("lock_mark:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الماركدون")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الماركدون")
 else
-tsX000("lock",msg,"☑┇تم قفل الماركدون")
+tsX000("lock",msg,"❌┇تم قفل الماركدون")
 database:set("lock_mark:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الصور") then
 local tsX_o = database:get("lock_photo:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الصور")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الصور")
 else
-tsX000("lock",msg,"☑┇تم قفل الصور")
+tsX000("lock",msg,"❌┇تم قفل الصور")
 database:set("lock_photo:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الملصقات") then
 local tsX_o = database:get("lock_stecker:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الملصقات")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الملصقات")
 else
-tsX000("lock",msg,"☑┇تم قفل الملصقات")
+tsX000("lock",msg,"❌┇تم قفل الملصقات")
 database:set("lock_stecker:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الفيديو") then
 local tsX_o = database:get("lock_video:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الفيديو")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الفيديو")
 else
-tsX000("lock",msg,"☑┇تم قفل الفيديو")
+tsX000("lock",msg,"❌┇تم قفل الفيديو")
 database:set("lock_video:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الانلاين") then
 local tsX_o = database:get("lock_inline:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الانلاين")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الانلاين")
 else
-tsX000("lock",msg,"☑┇تم قفل الانلاين")
+tsX000("lock",msg,"❌┇تم قفل الانلاين")
 database:set("lock_inline:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الدردشه") then
 local tsX_o = database:get("lock_chat:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الدردشه")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الدردشه")
 else
-tsX000("lock",msg,"☑┇تم قفل الدردشه")
+tsX000("lock",msg,"❌┇تم قفل الدردشه")
 database:set("lock_chat:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل التوجيه") then
 local tsX_o = database:get("lock_fwd:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل التوجيه")
+tsX000("lock",msg,"❌┇بالفعل تم قفل التوجيه")
 else
-tsX000("lock",msg,"☑┇تم قفل التوجيه")
+tsX000("lock",msg,"❌┇تم قفل التوجيه")
 database:set("lock_fwd:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل التثبيت") then
 local tsX_o = database:get("lock_pin:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل التثبيت")
+tsX000("lock",msg,"❌┇بالفعل تم قفل التثبيت")
 else
-tsX000("lock",msg,"☑┇تم قفل التثبيت")
+tsX000("lock",msg,"❌┇تم قفل التثبيت")
 database:set("lock_pin:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الاغاني") then
 local tsX_o = database:get("lock_audeo:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الاغاني")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الاغاني")
 else
-tsX000("lock",msg,"☑┇تم قفل الاغاني")
+tsX000("lock",msg,"❌┇تم قفل الاغاني")
 database:set("lock_audeo:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الصوت") then
 local tsX_o = database:get("lock_voice:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الصوت")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الصوت")
 else
-tsX000("lock",msg,"☑┇تم قفل الصوت")
+tsX000("lock",msg,"❌┇تم قفل الصوت")
 database:set("lock_voice:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الجهات") then
 local tsX_o = database:get("lock_contact:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الجهات")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الجهات")
 else
-tsX000("lock",msg,"☑┇تم قفل الجهات")
+tsX000("lock",msg,"❌┇تم قفل الجهات")
 database:set("lock_contact:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل العربيه") then
 local tsX_o = database:get("lock_ar:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل العربيه")
+tsX000("lock",msg,"❌┇بالفعل تم قفل العربيه")
 else
-tsX000("lock",msg,"☑┇تم قفل العربيه")
+tsX000("lock",msg,"❌┇تم قفل العربيه")
 database:set("lock_ar:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الانكليزيه") then
 local tsX_o = database:get("lock_en:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الانكليزيه")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الانكليزيه")
 else
-tsX000("lock",msg,"☑┇تم قفل الانكليزيه")
+tsX000("lock",msg,"❌┇تم قفل الانكليزيه")
 database:set("lock_en:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الميديا") then
 local tsX_o = database:get("lock_media:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الميديا")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الميديا")
 else
-tsX000("lock",msg,"☑┇تم قفل الميديا")
+tsX000("lock",msg,"❌┇تم قفل الميديا")
 database:set("lock_media:madmax"..msg.chat_id_..bot_id,"ok")
 database:set("lock_audeo:madmax"..msg.chat_id_..bot_id,"ok")
 database:set("lock_video:madmax"..msg.chat_id_..bot_id,"ok")
@@ -1106,54 +1106,54 @@ end
 if (text == "قفل الروابط") then
 local tsX_o = database:get("lock_link:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الروابط")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الروابط")
 else
-tsX000("lock",msg,"☑┇تم قفل الروابط")
+tsX000("lock",msg,"❌┇تم قفل الروابط")
 database:set("lock_link:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل المعرف") then
 local tsX_o = database:get("lock_username:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل المعرف")
+tsX000("lock",msg,"❌┇بالفعل تم قفل المعرف")
 else
-tsX000("lock",msg,"☑┇تم قفل المعرف")
+tsX000("lock",msg,"❌┇تم قفل المعرف")
 database:set("lock_username:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل الاشعارات") then
 local tsX_o = database:get("lock_new:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل الاشعارات")
+tsX000("lock",msg,"❌┇بالفعل تم قفل الاشعارات")
 else
-tsX000("lock",msg,"☑┇تم قفل الاشعارات")
+tsX000("lock",msg,"❌┇تم قفل الاشعارات")
 database:set("lock_new:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل البوتات بالطرد") then
 local tsX_o = database:get("lock_botAndBan:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل البوتات بالطرد")
+tsX000("lock",msg,"❌┇بالفعل تم قفل البوتات بالطرد")
 else
-tsX000("lock",msg,"☑┇تم قفل البوتات بالطرد")
+tsX000("lock",msg,"❌┇تم قفل البوتات بالطرد")
 database:set("lock_botAndBan:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل البوتات") then
 local tsX_o = database:get("lock_bot:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل البوتات")
+tsX000("lock",msg,"❌┇بالفعل تم قفل البوتات")
 else
-tsX000("lock",msg,"☑┇تم قفل البوتات")
+tsX000("lock",msg,"❌┇تم قفل البوتات")
 database:set("lock_bot:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "قفل بصمه الفيديو") then
 local tsX_o = database:get("lock_note:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم قفل بصمه فيديو")
+tsX000("lock",msg,"❌┇بالفعل تم قفل بصمه فيديو")
 else
-tsX000("lock",msg,"☑┇تم قفل بصمه فيديو")
+tsX000("lock",msg,"❌┇تم قفل بصمه فيديو")
 database:set("lock_note:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
@@ -1162,216 +1162,216 @@ end
 if (text == "فتح الاشعارات") then
 local tsX_o = database:get("lock_new:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الاشعارات")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الاشعارات")
 else
-tsX000("lock",msg,"☑┇تم فتح الاشعارات")
+tsX000("lock",msg,"✔┇تم فتح الاشعارات")
 database:del("lock_new:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح التاك") then
 local tsX_o = database:get("lock_tag:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح التاك")
+tsX000("lock",msg,"✔┇بالفعل تم فتح التاك")
 else
-tsX000("lock",msg,"☑┇تم فتح التاك")
+tsX000("lock",msg,"✔┇تم فتح التاك")
 database:del("lock_tag:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الكلايش") then
 local tsX_o = database:get("lock_word:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الكلايش")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الكلايش")
 else
-tsX000("lock",msg,"☑┇تم فتح الكلايش")
+tsX000("lock",msg,"✔┇تم فتح الكلايش")
 database:del("lock_word:madmax"..msg.chat_id_..bot_id)
 end
 end
 if (text == "فتح تعديل الميديا") then
 local tsX_o = database:get("madmax:lo:edit:new:"..bot_id..msg.chat_id_)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح تعديل الميديا")
+tsX000("lock",msg,"✔┇بالفعل تم فتح تعديل الميديا")
 else
-tsX000("lock",msg,"☑┇تم فتح تعديل الميديا")
+tsX000("lock",msg,"✔┇تم فتح تعديل الميديا")
 database:del("madmax:lo:edit:new:"..bot_id..msg.chat_id_)
 end
 end
 if (text == "فتح الشارحه") then
 local tsX_o = database:get("lock_sarha:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الشارحه")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الشارحه")
 else
-tsX000("lock",msg,"☑┇تم فتح الشارحه")
+tsX000("lock",msg,"✔┇تم فتح الشارحه")
 database:del("lock_sarha:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح التكرار") then
 local tsX_o = database:get("lock_lllll:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح التكرار")
+tsX000("lock",msg,"✔┇بالفعل تم فتح التكرار")
 else
-tsX000("lock",msg,"☑┇تم فتح التكرار")
+tsX000("lock",msg,"✔┇تم فتح التكرار")
 database:del("lock_lllll:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح التعديل") then
 local tsX_o = database:get("lock_edit:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح التعديل")
+tsX000("lock",msg,"✔┇بالفعل تم فتح التعديل")
 else
-tsX000("lock",msg,"☑┇تم فتح التعديل")
+tsX000("lock",msg,"✔┇تم فتح التعديل")
 database:del("lock_edit:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح المتحركه") then
 local tsX_o = database:get("lock_gif:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح المتحركه")
+tsX000("lock",msg,"✔┇بالفعل تم فتح المتحركه")
 else
-tsX000("lock",msg,"☑┇تم فتح المتحركه")
+tsX000("lock",msg,"✔┇تم فتح المتحركه")
 database:del("lock_gif:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الملفات") then
 local tsX_o = database:get("lock_files:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الملفات")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الملفات")
 else
-tsX000("lock",msg,"☑┇تم فتح الملفات")
+tsX000("lock",msg,"✔┇تم فتح الملفات")
 database:del("lock_files:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الماركدون") then
 local tsX_o = database:get("lock_mark:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الماركدون")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الماركدون")
 else
-tsX000("lock",msg,"☑┇تم فتح الماركدون")
+tsX000("lock",msg,"✔┇تم فتح الماركدون")
 database:del("lock_mark:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الصور") then
 local tsX_o = database:get("lock_photo:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الصور")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الصور")
 else
-tsX000("lock",msg,"☑┇تم فتح الصور")
+tsX000("lock",msg,"✔┇تم فتح الصور")
 database:del("lock_photo:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الملصقات") then
 local tsX_o = database:get("lock_stecker:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الملصقات")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الملصقات")
 else
-tsX000("lock",msg,"☑┇تم فتح الملصقات")
+tsX000("lock",msg,"✔┇تم فتح الملصقات")
 database:del("lock_stecker:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الفيديو") then
 local tsX_o = database:get("lock_video:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الفيديو")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الفيديو")
 else
-tsX000("lock",msg,"☑┇تم فتح الفيديو")
+tsX000("lock",msg,"✔┇تم فتح الفيديو")
 database:del("lock_video:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الانلاين") then
 local tsX_o = database:get("lock_inline:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الانلاين")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الانلاين")
 else
-tsX000("lock",msg,"☑┇تم فتح الانلاين")
+tsX000("lock",msg,"✔┇تم فتح الانلاين")
 database:del("lock_inline:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الدردشه") then
 local tsX_o = database:get("lock_chat:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الدردشه")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الدردشه")
 else
-tsX000("lock",msg,"☑┇تم فتح الدردشه")
+tsX000("lock",msg,"✔┇تم فتح الدردشه")
 database:del("lock_chat:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح التوجيه") then
 local tsX_o = database:get("lock_fwd:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح التوجيه")
+tsX000("lock",msg,"✔┇بالفعل تم فتح التوجيه")
 else
-tsX000("lock",msg,"☑┇تم فتح التوجيه")
+tsX000("lock",msg,"✔┇تم فتح التوجيه")
 database:del("lock_fwd:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح التثبيت") then
 local tsX_o = database:get("lock_pin:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح التثبيت")
+tsX000("lock",msg,"✔┇بالفعل تم فتح التثبيت")
 else
-tsX000("lock",msg,"☑┇تم فتح التثبيت")
+tsX000("lock",msg,"✔┇تم فتح التثبيت")
 database:del("lock_pin:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الاغاني") then
 local tsX_o = database:get("lock_audeo:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الاغاني")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الاغاني")
 else
-tsX000("lock",msg,"☑┇تم فتح الاغاني")
+tsX000("lock",msg,"✔┇تم فتح الاغاني")
 database:del("lock_audeo:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الصوت") then
 local tsX_o = database:get("lock_voice:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الصوت")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الصوت")
 else
-tsX000("lock",msg,"☑┇تم فتح الصوت")
+tsX000("lock",msg,"✔┇تم فتح الصوت")
 database:del("lock_voice:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح البوتات بالطرد") then
 local tsX_o = database:get("lock_botAndBan:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح البوتات بالطرد")
+tsX000("lock",msg,"✔┇بالفعل تم فتح البوتات بالطرد")
 else
-tsX000("lock",msg,"☑┇تم فتح البوتات بالطرد")
+tsX000("lock",msg,"✔┇تم فتح البوتات بالطرد")
 database:del("lock_botAndBan:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الجهات") then
 local tsX_o = database:get("lock_contact:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الجهات")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الجهات")
 else
-tsX000("lock",msg,"☑┇تم فتح الجهات")
+tsX000("lock",msg,"✔┇تم فتح الجهات")
 database:del("lock_contact:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح العربيه") then
 local tsX_o = database:get("lock_ar:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح العربيه")
+tsX000("lock",msg,"✔┇بالفعل تم فتح العربيه")
 else
-tsX000("lock",msg,"☑┇تم فتح العربيه")
+tsX000("lock",msg,"✔┇تم فتح العربيه")
 database:del("lock_ar:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الانكليزيه") then
 local tsX_o = database:get("lock_en:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الانكليزيه")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الانكليزيه")
 else
-tsX000("lock",msg,"☑┇تم فتح الانكليزيه")
+tsX000("lock",msg,"✔┇تم فتح الانكليزيه")
 database:del("lock_en:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الميديا") then
 local tsX_o = database:get("lock_media:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الميديا")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الميديا")
 else
-tsX000("lock",msg,"☑┇تم فتح الميديا")
+tsX000("lock",msg,"✔┇تم فتح الميديا")
 database:del("lock_media:madmax"..msg.chat_id_..bot_id,"ok")
 database:del("lock_audeo:madmax"..msg.chat_id_..bot_id,"ok")
 database:del("lock_video:madmax"..msg.chat_id_..bot_id,"ok")
@@ -1385,36 +1385,36 @@ end
 if (text == "فتح المعرف") then
 local tsX_o = database:get("lock_username:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح المعرف")
+tsX000("lock",msg,"✔┇بالفعل تم فتح المعرف")
 else
-tsX000("lock",msg,"☑┇تم فتح المعرف")
+tsX000("lock",msg,"✔┇تم فتح المعرف")
 database:del("lock_username:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح بصمه الفيديو") then
 local tsX_o = database:get("lock_note:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح بصمه فيديو")
+tsX000("lock",msg,"✔┇بالفعل تم فتح بصمه فيديو")
 else
-tsX000("lock",msg,"☑┇تم فتح بصمه فيديو")
+tsX000("lock",msg,"✔┇تم فتح بصمه فيديو")
 database:del("lock_note:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح الروابط") then
 local tsX_o = database:get("lock_link:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح الروابط")
+tsX000("lock",msg,"✔┇بالفعل تم فتح الروابط")
 else
-tsX000("lock",msg,"☑┇تم فتح الروابط")
+tsX000("lock",msg,"✔┇تم فتح الروابط")
 database:del("lock_link:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end
 if (text == "فتح البوتات") then
 local tsX_o = database:get("lock_bot:madmax"..msg.chat_id_..bot_id)
 if not tsX_o then
-tsX000("lock",msg,"☑┇بالفعل تم فتح البوتات")
+tsX000("lock",msg,"✔┇بالفعل تم فتح البوتات")
 else
-tsX000("lock",msg,"☑┇تم فتح البوتات")
+tsX000("lock",msg,"✔┇تم فتح البوتات")
 database:del("lock_bot:madmax"..msg.chat_id_..bot_id,"ok")
 end
 end  --         »»               End madmax unlock                       ««              --
@@ -1676,10 +1676,10 @@ if text == "رفع منشئ" and msg.reply_to_message_id_ then
 function setcreator_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'creator:'..msg.chat_id_
 if database:sismember(hash, result.sender_user_id_) then
-tsX000("prore",msg,"☑┇بالفعل تم رفع منشئ في البوت")
+tsX000("prore",msg,"✔┇بالفعل تم رفع منشئ في البوت")
 else
 database:sadd(hash, result.sender_user_id_)
-tsX000("prore",msg,"☑┇تم رفع منشئ في البوت")
+tsX000("prore",msg,"✔┇تم رفع منشئ في البوت")
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,setcreator_by_reply)
@@ -1689,7 +1689,7 @@ local apow = {string.match(text, "^(رفع منشئ) @(.*)$")}
 function setcreator_by_username(extra, result, success)
 if result.id_ then
 database:sadd('madmax:'..bot_id..'creator:'..msg.chat_id_, result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apow[2] or 'madmaxteam')..')\n☑┇تم رفع منشئ في البوت'
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apow[2] or 'madmaxteam')..')\n✔┇تم رفع منشئ في البوت'
 else
 texts = '✖┇خطاء'
 end
@@ -1700,16 +1700,16 @@ end
 if text:match("^رفع منشئ (%d+)$") then
 local apow = {string.match(text, "^(رفع منشئ) (%d+)$")}
 database:sadd('madmax:'..bot_id..'creator:'..msg.chat_id_, apow[2])
-tsX000(apow[2],msg,"☑┇تم رفع منشئ في البوت")
+tsX000(apow[2],msg,"✔┇تم رفع منشئ في البوت")
 end
 if text:match("^تنزيل منشئ$") and msg.reply_to_message_id_ then
 function decreator_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'creator:'..msg.chat_id_
 if not database:sismember(hash, result.sender_user_id_) then
-tsX000("prore",msg,"☑┇بالفعل تم تنزيله من منشئين المجموعه")
+tsX000("prore",msg,"❌┇بالفعل تم تنزيله من منشئين المجموعه")
 else
 database:srem(hash, result.sender_user_id_)
-tsX000("prore",msg,"☑┇تم تنزيله من منشئين المجموعه")
+tsX000("prore",msg,"❌┇تم تنزيله من منشئين المجموعه")
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,decreator_by_reply)
@@ -1720,7 +1720,7 @@ local hash =  'madmax:'..bot_id..'creator:'..msg.chat_id_
 function remcreator_by_username(extra, result, success)
 if result.id_ then
 database:srem(hash, result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apow[2] or 'madmaxteam')..')\n☑┇تم تنزيله من منشئين المجموعه'
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apow[2] or 'madmaxteam')..')\n❌┇تم تنزيله من منشئين المجموعه'
 else
 texts = '✖┇خطاء'
 end
@@ -1732,7 +1732,7 @@ if text:match("^تنزيل منشئ (%d+)$") then
 local hash =  'madmax:'..bot_id..'creator:'..msg.chat_id_
 local apow = {string.match(text, "^(تنزيل منشئ) (%d+)$")}
 database:srem(hash, apow[2])
-tsX000(apow[2],msg,"☑┇تم تنزيله من منشئين المجموعه")
+tsX000(apow[2],msg,"❌┇تم تنزيله من منشئين المجموعه")
 end--
 if text:match("^المنشئين") then
 local hash =   'madmax:'..bot_id..'creator:'..msg.chat_id_
@@ -1771,7 +1771,7 @@ local user = database:scard('madmax:'..bot_id.."userss") or 0
 local gps2 = database:scard("madmax:gog"..bot_id) or 0
 local gps9 = database:scard("madmax:good"..bot_id..os.date("%d")) or 0
 local gps3 = database:scard('madmax:'..bot_id..'pro:groups') or 0
-send(msg.chat_id_, msg.id_, 1, '• المجموعات :\n📊┇عدد الكروبات الكلي ~⪼  *{'..gps..'}*\n🔋┇عدد الكروبات المفعله ~⪼  *{'..gps2..'}*\n🔌┇عدد الكروبات الغير مفعله ~⪼  *{'..(gps - gps2)..'}*\n💡┇عدد الكروبات المدفوعه ~⪼  *{'..(gps3)..'}*\n⏱┇عدد الكروبات المتفاعله اليوم ~⪼  *{'..(gps9)..'}*\n\n• الاعضاء :\n👥┇ عدد اعضاء الخاص : {`'..user..'`}', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '• المجموعات :\n📊┇مجموع الكروبات المفعله والغير مفعله ~⪼  *{'..gps..'}*\n🔋┇عدد الكروبات المفعله ~⪼  *{'..gps2..'}*\n🔌┇عدد الكروبات الغير مفعله ~⪼  *{'..(gps - gps2)..'}*\n💡┇عدد الكروبات المدفوعه ~⪼  *{'..(gps3)..'}*\n⏱┇عدد الكروبات المتفاعله اليوم ~⪼  *{'..(gps9)..'}*\n\n• الاعضاء :\n👥┇ عدد اعضاء الخاص : {`'..user..'`}', 1, 'md')
 end
 if tonumber(sudo_add) == tonumber(msg.sender_user_id_) then
 if text:match("^تفعيل الكل$") then
@@ -1782,7 +1782,7 @@ database:sadd("madmax:gog"..bot_id, gps[i])
 database:set('madmax:'..bot_id.."enable:"..gps[i],true)
 database:set( 'madmax:'..bot_id.."charge:"..gps[i],true)
 end
-send(msg.chat_id_, msg.id_, 1, '🔋┇تم تفعيل ~⪼  *{'..(#gps - #gps2)..'}*', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '🔋┇تم تفعيل كل الكروبات ~⪼  *{'..(#gps - #gps2)..'}*', 1, 'md')
 end
 if text:match("^تعطيل الكل$") then
 local gps = database:smembers('madmax:'..bot_id.."groups") or 0
@@ -1792,12 +1792,12 @@ database:del("madmax:gog"..bot_id)
 database:del('madmax:'..bot_id.."enable:"..gps[i])
 database:del( 'madmax:'..bot_id.."charge:"..gps[i])
 end
-send(msg.chat_id_, msg.id_, 1, '🔌┇تم تعطيل ~⪼  *{'..#gps..'}*', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '🔌┇تم تعطيل كل الكروبات ~⪼  *{'..#gps..'}*', 1, 'md')
 end
 if text:match("^مغادره الكل$") then
 local gps = database:smembers('madmax:'..bot_id.."groups") or 0
 local gps2 = database:smembers("madmax:gog"..bot_id) or 0
-send(msg.chat_id_, msg.id_, 1, '💣┇تم مغادره ~⪼  *{'..#gps..'}*', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '💣┇تم مغادره كل الكروبات ~⪼  *{'..#gps..'}*', 1, 'md')
 for i=1,#gps do
 database:del('madmax:'..bot_id.."enable:"..gps[i])
 chat_leave(msg.chat_id_, bot_id)
@@ -1834,8 +1834,8 @@ local madmaxe = 'https://api.telegram.org/bot' .. token .. '/sendDocument'
 local curl = 'curl "' .. madmaxe .. '" -F "chat_id=' .. msg.chat_id_ .. '" -F "document=@' .. 'MadMaX.txt' .. '"'
 io.popen(curl)
 end
-if text:match("^تحديث السورس$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
-send(msg.chat_id_, msg.id_, 1, '☑┇تم التحديث', 1, 'md')
+if text:match("^تحديث$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+send(msg.chat_id_, msg.id_, 1, '✔┇تم التحديث', 1, 'md')
 os.execute('rm -rf ./libs/utils.lua')
 os.execute('cd libs && wget https://raw.githubusercontent.com/MadMaXTEAM/Madmax/master/libs/utils.lua')
 os.execute('rm -rf Madmax.lua')
@@ -1843,8 +1843,8 @@ os.execute('wget https://raw.githubusercontent.com/MadMaXTEAM/Madmax/master/Madm
 os.exit()
 return false
 end
-if text:match("^وضع وقت (%d+)$") then
-local a = {string.match(text, "^(وضع وقت) (%d+)$")}
+if text:match("^ضع وقت (%d+)$") then
+local a = {string.match(text, "^(ضع وقت) (%d+)$")}
 local time = a[2] * day
 database:setex( 'madmax:'..bot_id.."charge:"..msg.chat_id_,time,true)
 database:set( 'madmax:'..bot_id.."enable:"..msg.chat_id_,true)
@@ -1874,7 +1874,7 @@ lion_info = '@'..(result.username_ or 'لا يوجد')..''
 local timeplan1 = 2592000
 database:setex( 'madmax:'..bot_id.."charge:"..txt[2],timeplan1,true)
 send(msg.chat_id_, msg.id_, 1, '☑┇المجموعه ('..txt[2]..') تم اعادة تفعيلها المدة 30 يوم', 1, 'md')
-send(txt[2], 0, 1, '☑┇تم تفعيل مدة المجموعه 30 يوم', 1, 'md')
+send(txt[2], 0, 1, '✔┇تم تفعيل مدة المجموعه 30 يوم', 1, 'md')
 for k,v in pairs(sudo_users) do
 function madmax_info(k1,k2)
 send(v, 0, 1, "🔘┇قام بتفعيل مجموعه المده كانت 30 يوم \n🎫┇ايدي المطور ~⪼ ("..msg.sender_user_id_..")\n📜┇معرف المطور ~⪼ "..lion_info.."\n🌐┇معلومات المجموعه \n\n🎫┇ايدي المجموعه ~⪼ ("..msg.chat_id_..")\nⓂ┇اسم المجموعه ~⪼ ("..k2.title_..")" , 1, 'md')
@@ -1893,7 +1893,7 @@ lion_info = '@'..(result.username_ or 'لا يوجد')..''
 local timeplan2 = 7776000
 database:setex( 'madmax:'..bot_id.."charge:"..txt[2],timeplan2,true)
 send(msg.chat_id_, msg.id_, 1, '☑┇المجموعه ('..txt[2]..') تم اعادة تفعيلها المدة 90 يوم', 1, 'md')
-send(txt[2], 0, 1, '☑┇تم تفعيل مدة المجموعه 90 يوم', 1, 'md')
+send(txt[2], 0, 1, '✔┇تم تفعيل مدة المجموعه 90 يوم', 1, 'md')
 for k,v in pairs(sudo_users) do
 function madmax_info(k1,k2)
 send(v, 0, 1, "🔘┇قام بتفعيل مجموعه المده كانت 90 يوم \n🎫┇ايدي المطور ~⪼ ("..msg.sender_user_id_..")\n📜┇معرف المطور ~⪼ "..lion_info.."\n🌐┇معلومات المجموعه \n\n🎫┇ايدي المجموعه ~⪼ ("..msg.chat_id_..")\nⓂ┇اسم المجموعه ~⪼ ("..k2.title_..")" , 1, 'md')
@@ -1911,7 +1911,7 @@ function lion333(extra,result,success)
 lion_info = '@'..(result.username_ or 'لا يوجد')..''
 database:set( 'madmax:'..bot_id.."charge:"..txt[2],true)
 send(msg.chat_id_, msg.id_, 1, '☑┇المجموعه ('..txt[2]..') تم اعادة تفعيلها المدة لا نهائية', 1, 'md')
-send(txt[2], 0, 1, '☑┇تم تفعيل مدة المجموعه لا نهائية', 1, 'md')
+send(txt[2], 0, 1, '✔┇تم تفعيل مدة المجموعه لا نهائية', 1, 'md')
 for k,v in pairs(sudo_users) do
 function madmax_info(k1,k2)
 send(v, 0, 1, "🔘┇قام بتفعيل مجموعه المده كانت لا نهائية \n🎫┇ايدي المطور ~⪼ ("..msg.sender_user_id_..")\n📜┇معرف المطور ~⪼ "..lion_info.."\n🌐┇معلومات المجموعه \n\n🎫┇ايدي المجموعه ~⪼ ("..msg.chat_id_..")\nⓂ┇اسم المجموعه ~⪼ ("..k2.title_..")" , 1, 'md')
@@ -1930,7 +1930,7 @@ local files_madmax2 = ''
 for i=1,#files_madmax do
 files_madmax2 = files_madmax2..'{'..files_madmax[i]..'}\n'
 end
-send(msg.chat_id_, msg.id_, 1, '☑┇جميع الملفات : \n '..lion..'\n ---------------------- \n\n✔┇الملفات المفعله \n'..files_madmax2..'', 1, 'html')
+send(msg.chat_id_, msg.id_, 1, '🗂┇جميع الملفات : \n '..lion..'\n ---------------------- \n\n✔┇الملفات المفعله \n'..files_madmax2..'', 1, 'html')
 end
 text = msg.content_.text_
 if text then
@@ -1950,28 +1950,28 @@ if f ~= "lion" then
 ts23 = ""
 if f:match("^(.*)(lion_madmax)(.*)$") then
 if f:match("^(.*)(function send)(.*)$") then
-ts23 = ts23 .. "\n⚠┇ارسال رسال نصيه"
+ts23 = ts23 .. "\n✔┇ارسال رسائل نصيه"
 end
 if (f:match("^(.*)(sudo.lua)(.*)$")) then 
-ts23 = ts23 .. "\n⚠┇الوصول الى توكن البوت وايدي المطور الاساسي"
+ts23 = ts23 .. "\n✔┇الوصول الى توكن البوت وايدي المطور الاساسي"
 end
 if (f:match("^(.*)(io.popen)(.*)$")) then 
-ts23 = ts23 .. "\n⚠┇الوصول الى تورمنل البوت"
+ts23 = ts23 .. "\n✔┇الوصول الى تورمنل البوت"
 end
 if (f:match("^(.*)(os.execute)(.*)$")) then 
-ts23 = ts23 .. "\n⚠┇الوصول الى تورمنل البوت"
+ts23 = ts23 .. "\n✔┇الوصول الى تورمنل البوت"
 end
 if (f:match("^(.*)(redis)(.*)$")) then 
-ts23 = ts23 .. "\n⚠┇الوصول الى خزن البوت"
+ts23 = ts23 .. "\n✔┇الوصول الى خزن البوت"
 end
 if (f:match("^(.*)(ssl.https)(.*)$")) then 
-ts23 = ts23 .. "\n⚠┇الوصول الى مواقع خارجيه في البوت"
+ts23 = ts23 .. "\n✔┇الوصول الى مواقع خارجيه في البوت"
 end
 if (f:match("^(.*)(rm -fr)(.*)$")) then 
-ts23 = ts23 .. "\n⚠┇حذف ملفات او مجلدات"
+ts23 = ts23 .. "\n❌┇حذف ملفات او مجلدات"
 end
 if (f:match("^(.*)(encode)(.*)$")) then 
-ts23 = ts23 .. "\n⚠┇التصال بapi خارجي"
+ts23 = ts23 .. "\n❌┇التصال بapi خارجي"
 end
 if (f:match("^(.*)(api.telegram.org/bot)(.*)$")) then 
 ts23 = ts23 .. "\n⚠┇قد يسبب الضعف في البوت"
@@ -1979,34 +1979,34 @@ end
 database:sadd("files"..bot_id,name_t[2]..'.lua')
 send(msg.chat_id_, msg.id_, 1, "✔┇تم تفعيل {"..name_t[2]..".lua}\n"..ts23, 1, 'html')
 else
-send(msg.chat_id_, msg.id_, 1, '⚠┇عذرا لا يمكن تشغيل {'..name_t[2]..'.lua} \n❗┇لانه لا يدعم سورس تشاكي \n 🦁┇[ملفات يدعمها سورس تشاكي](t.me/madmaxFiles)', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇عذرا لا يمكن تشغيل {'..name_t[2]..'.lua} \n❗┇لانه لا يدعم سورس ماكس المجنون \n 🗂┇[ملفات يدعمها سورس ماكس المجنون](t.me/madmaxFiles)', 1, 'md')
 end
 else
-send(msg.chat_id_, msg.id_, 1, '⚠┇عذرا لا يمكن تشغيل {'..name_t[2]..'.lua} \n❗┇لانه لا يدعم سورس تشاكي \n 🦁┇[ملفات يدعمها سورس تشاكي](t.me/madmaxFiles)', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇عذرا لا يمكن تشغيل {'..name_t[2]..'.lua} \n❗┇لانه لا يدعم سورس ماكس المجنون \n 🗂┇[ملفات يدعمها سورس تشاكي](t.me/madmaxFiles)', 1, 'md')
 end
 end
 if text:match("^(تعطيل ملف) (.*)(.lua)$") then
 local name_t = {string.match(text, "^(تعطيل ملف) (.*)(.lua)$")}
 database:srem("files"..bot_id,name_t[2]..'.lua')
-send(msg.chat_id_, msg.id_, 1, "✖┇تم تعطيل {"..name_t[2]..".lua}", 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "❌┇تم تعطيل {"..name_t[2]..".lua}", 1, 'html')
 end
 if (text:match("^(مسح جميع الملفات)$"))then
 database:del("files"..bot_id)
-send(msg.chat_id_, msg.id_, 1, "🗑┇تم حذف جميع الملفات", 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "🗑┇تم مسح جميع الملفات", 1, 'html')
 end
-if text:match("^(حذف ملف) (.*)(.lua)$") then
-local name_t = {string.match(text, "^(حذف ملف) (.*)(.lua)$")}
+if text:match("^(مسح ملف) (.*)(.lua)$") then
+local name_t = {string.match(text, "^(مسح ملف) (.*)(.lua)$")}
 io.popen("rm -fr files_madmax/"..name_t[2]..'.lua')
 database:srem("files"..bot_id,name_t[2]..'.lua')
-send(msg.chat_id_, msg.id_, 1, "✖┇تم حذف {"..name_t[2]..".lua}", 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم مسح الملف {"..name_t[2]..".lua}", 1, 'html')
 end
 if (msg.content_.text_ == 'اضف ملف' ) then
 send(msg.chat_id_, msg.id_, 1, " 📥┇ ارسل ملف الان", 1, 'html')
 database:set("addfiel"..msg.sender_user_id_,"yes")
 end
-if text:match("^(جلب ملف) (.*)(.lua)$") then
-local name_t = {string.match(text, "^(جلب ملف) (.*)(.lua)$")}
-send(msg.chat_id_, msg.id_, 1, "🕡┇ انتظر بعض الوقت وسيتم جلب \n 📁┇ملف : {"..name_t[2]..".lua}", 1, 'html')
+if text:match("^(جيبلي ملف) (.*)(.lua)$") then
+local name_t = {string.match(text, "^(جيبلي ملف) (.*)(.lua)$")}
+send(msg.chat_id_, msg.id_, 1, "🕡┇ انتظر بعض الوقت وسيتم جلب \n 🗂┇ملف : {"..name_t[2]..".lua}", 1, 'html')
 local madmaxe = 'https://api.telegram.org/bot' .. token .. '/sendDocument'
 local curl = 'curl "' .. madmaxe .. '" -F "chat_id=' .. msg.chat_id_ .. '" -F "document=@' .. 'files_madmax/'..name_t[2]..'.lua' .. '"'
 io.popen(curl)
@@ -2017,39 +2017,39 @@ if tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 if text then
 if (text and text == 'تفعيل الانلاين' ) then
 database:set('key_ts'..bot_id,"yes")
-send(msg.chat_id_, msg.id_, 1, "☑┇تم تفعيل خاصيه الازرار الشفافه", 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم تفعيل خاصيه الازرار الشفافه", 1, 'html')
 end
 if (text and text == 'تعطيل الانلاين') then
 database:del('key_ts'..bot_id)
-send(msg.chat_id_, msg.id_, 1, "⚠┇تم تعطيل خاصيه الازرار الشفافه", 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "❌┇تم تعطيل خاصيه الازرار الشفافه", 1, 'html')
 end
 if text:match("^(تغير نص الانلاين) (.*)$") then
 local name_t = {string.match(text, "^(تغير نص الانلاين) (.*)$")}
 database:set("channel_ts"..bot_id, name_t[2])
-send(msg.chat_id_, msg.id_, 1, "📡┇تم تغير النص ~⪼ {"..name_t[2].."}", 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم تغير النص ~⪼ {"..name_t[2].."}", 1, 'html')
 end
 
 if text:match("^(تغير رابط الانلاين) [Hh][Tt][Tt][Pp](.*)$") then
 local name_t = {string.match(text, "^(تغير رابط الانلاين) (.*)$")}
 database:set("channel_user_ts"..bot_id, name_t[2])
-send(msg.chat_id_, msg.id_, 1, "📡┇تم تغير الرابط ~⪼ {"..name_t[2].."}", 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم تغير الرابط ~⪼ {"..name_t[2].."}", 1, 'html')
 end
 end
 
 end --sudo
 if tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
-if text == 'تفعيل التفعيل التلقائي'then
+if text == 'تفعيل البوت تلقائي'then
 database:set("add"..bot_id, "yes")
-send(msg.chat_id_, msg.id_, 1, "☑┇تم تفعيل التفعيل التلقائي", 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم تفعيل البوت تلقائي", 1, 'html')
 end
-if (text == 'تعطيل التفعيل التلقائي') then
+if (text == 'تعطيل البوت تلقائي') then
 database:del("add"..bot_id)
-send(msg.chat_id_, msg.id_, 1, "❎┇تم تعطيل التفعيل التلقائي", 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "❌┇تم تعطيل التفعيل التلقائي", 1, 'html')
 end
-if text:match("^(تعين عدد الاعضاء) (.*)$") then
-local lionj = {string.match(text, "^(تعين عدد الاعضاء) (.*)$")}
+if text:match("^(تعين العدد) (.*)$") then
+local lionj = {string.match(text, "^(تعين العدد) (.*)$")}
 database:set("ts_a"..bot_id,lionj[2])
-send(msg.chat_id_, msg.id_, 1, "🔘┇ تم تعين : "..lionj[2], 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "✔┇ تم تعين عدد الاعضاء: "..lionj[2], 1, 'html')
 end
 end
 end
@@ -2155,26 +2155,26 @@ database:set("madmax:edit:text:su:new:"..bot_id..msg.chat_id_..database:get("mad
 database:set("madmax:edit:text:su:new2:"..bot_id..msg.chat_id_..text,database:get("madmax:new:msg:"..msg.chat_id_..msg.sender_user_id_..bot_id))
 database:del("madmax:new:msg:"..msg.chat_id_..msg.sender_user_id_..bot_id)
 end  
-if (text and text == 'مسح امر المطور بالكليشه') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+if (text and text == 'مسح كليشه المطور') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 redis:del('madmax:'..bot_id..'text_sudo', text)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم حذف الكليشه ', 1, 'html')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح الكليشه ', 1, 'html')
 return "madmax"
 end
 if text:match("^مسح امر (.*)") then 
 local t = {string.match(text, "^مسح امر (.*)$")}
 database:del("madmax:edit:text:su:new2:"..bot_id..msg.chat_id_..database:get("madmax:edit:text:su:new:"..bot_id..msg.chat_id_..t[1]))
 database:del("madmax:edit:text:su:new:"..bot_id..msg.chat_id_..t[1])
-send(msg.chat_id_, msg.id_, 1, "☑┇ تم المسح بنجاح", 1, 'md')
+send(msg.chat_id_, msg.id_, 1, "✔┇ تم المسح بنجاح", 1, 'md')
 end
 end
 if text:match("^رفع ادمن$")  and is_owner(msg) and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'mods:'..msg.chat_id_
 if database:sismember(hash, result.sender_user_id_) then
-tsX000("prore",msg,'☑┇بالفعل تم رفعه ادمن')
+tsX000("prore",msg,'✔┇بالفعل تم رفعه ادمن')
 else
 database:sadd(hash, result.sender_user_id_)
-tsX000("prore",msg,'☑┇تم رفعه ادمن')
+tsX000("prore",msg,'✔┇تم رفعه ادمن')
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,promote_by_reply)
@@ -2184,7 +2184,7 @@ local apmd = {string.match(text, "^(رفع ادمن) @(.*)$")}
 function promote_by_username(extra, result, success)
 if result.id_ then
 database:sadd('madmax:'..bot_id..'mods:'..msg.chat_id_, result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n☑┇تم رفعه ادمن'
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n✔┇تم رفعه ادمن'
 else
 texts = '✖┇خطاء'
 end
@@ -2195,16 +2195,16 @@ end
 if text:match("^رفع ادمن (%d+)$") and is_owner(msg) then
 local apmd = {string.match(text, "^(رفع ادمن) (%d+)$")}
 database:sadd('madmax:'..bot_id..'mods:'..msg.chat_id_, apmd[2])
-tsX000(apmd[2],msg,"☑┇تم رفعه ادمن")
+tsX000(apmd[2],msg,"✔┇تم رفعه ادمن")
 end
 if text:match("^تنزيل ادمن$") and is_owner(msg) and msg.reply_to_message_id_ then
 function demote_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'mods:'..msg.chat_id_
 if not database:sismember(hash, result.sender_user_id_) then
-tsX000("prore",msg,"☑┇ بالفعل تم تنزيله من ادمنيه البوت")
+tsX000("prore",msg,"❌┇ بالفعل تم تنزيله من ادمنيه البوت")
 else
 database:srem(hash, result.sender_user_id_)
-tsX000("prore",msg,"☑┇ تم تنزيله من ادمنيه البوت")
+tsX000("prore",msg,"❌┇ تم تنزيله من ادمنيه البوت")
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,demote_by_reply)
@@ -2215,7 +2215,7 @@ local apmd = {string.match(text, "^(تنزيل ادمن) @(.*)$")}
 function demote_by_username(extra, result, success)
 if result.id_ then
 database:srem(hash, result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n☑┇تم تنزيله من ادمنيه البوت'
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n✔┇تم تنزيله من ادمنيه البوت'
 else
 texts = '✖┇خطاء'
 end
@@ -2227,16 +2227,16 @@ if text:match("^تنزيل ادمن (%d+)$") and is_owner(msg) then
 local hash =  'madmax:'..bot_id..'mods:'..msg.chat_id_
 local apmd = {string.match(text, "^(تنزيل ادمن) (%d+)$")}
 database:srem(hash, apmd[2])
-tsX000(apmd[2],msg,"☑┇ تم تنزيله من ادمنيه البوت")
+tsX000(apmd[2],msg,"❌┇ تم تنزيله من ادمنيه البوت")
 end
 if (text:match("^رفع عضو مميز$") or text:match("^رفع مميز$"))  and is_owner(msg) and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'vipgp:'..msg.chat_id_
 if database:sismember(hash, result.sender_user_id_) then
-tsX000("prore",msg,"☑┇بالفعل تم رفعه عضو مميز") 
+tsX000("prore",msg,"✔┇بالفعل تم رفعه عضو مميز") 
 else
 database:sadd(hash, result.sender_user_id_)
-tsX000("prore",msg,"☑┇تم رفعه عضو مميز")
+tsX000("prore",msg,"✔┇تم رفعه عضو مميز")
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,promote_by_reply)
@@ -2247,7 +2247,7 @@ local apmd = {string.match(text, "^(رفع عضو مميز) @(.*)$")}
 function promote_by_username(extra, result, success)
 if result.id_ then
 database:sadd('madmax:'..bot_id..'vipgp:'..msg.chat_id_, result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n☑┇تم رفعه عضو مميز'
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n✔┇تم رفعه عضو مميز'
 else
 texts = '✖┇خطاء'
 end
@@ -2259,31 +2259,31 @@ local text = text:gsub('رفع مميز','رفع عضو مميز')
 if text:match("^رفع عضو مميز (%d+)$") and is_owner(msg) then
 local apmd = {string.match(text, "^(رفع عضو مميز) (%d+)$")}
 database:sadd('madmax:'..bot_id..'vipgp:'..msg.chat_id_, apmd[2])
-tsX000(apmd[2],msg,"☑┇تم رفعه عضو مميز")
+tsX000(apmd[2],msg,"✔┇تم رفعه عضو مميز")
 end
 if text and text == "تعين الايدي" and is_owner(msg) then
-send(msg.chat_id_, msg.id_, 1,  '☑┇ ارسل الان النص\n☑┇ يمكنك اضافه :\n- `#username` > اسم المستخدم\n- `#msgs` > عدد رسائل المستخدم\n- `#photos` > عدد صور المستخدم\n- `#id` > ايدي المستخدم\n- `#auto` > تفاعل المستخدم\n- `#stast` > موقع المستخدم \n- `#edit` > عدد السحكات', 1, 'md')
+send(msg.chat_id_, msg.id_, 1,  '✔┇ ارسل الان النص\n✔┇ يمكنك اضافه :\n- `#username` > اسم المستخدم\n- `#msgs` > عدد رسائل المستخدم\n- `#photos` > عدد صور المستخدم\n- `#id` > ايدي المستخدم\n- `#auto` > تفاعل المستخدم\n- `#stast` > موقع المستخدم \n- `#edit` > عدد السحكات', 1, 'md')
 database:set("madmax:set:id:"..bot_id..msg.chat_id_..msg.sender_user_id_,'madmax')
 return "madmax"
 end
 if text and is_owner(msg) and database:get("madmax:set:id:"..bot_id..msg.chat_id_..msg.sender_user_id_) then 
 database:del("madmax:set:id:"..bot_id..msg.chat_id_..msg.sender_user_id_)
-send(msg.chat_id_, msg.id_, 1,  '☑┇ تم الحفض بنجاح', 1, 'md')
+send(msg.chat_id_, msg.id_, 1,  '✔┇ تم الحفض بنجاح', 1, 'md')
 database:set("madmax:gr:id:text:"..bot_id..msg.chat_id_,text)
 end
 if text and text == "مسح الايدي" and is_owner(msg) then
-send(msg.chat_id_, msg.id_, 1,  '✖┇ تم المسح بنجاح', 1, 'md')
+send(msg.chat_id_, msg.id_, 1,  '❌┇ تم المسح بنجاح', 1, 'md')
 database:del("madmax:gr:id:text:"..bot_id..msg.chat_id_)
 end
 if (text:match("^تنزيل عضو مميز$") or text:match("^تنزيل مميز$")) and is_owner(msg) and msg.reply_to_message_id_ then
 function demote_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'vipgp:'..msg.chat_id_
 if not database:sismember(hash, result.sender_user_id_) then
-send(msg.chat_id_, msg.id_, 1, '👤┇العضو ~⪼ *('..result.sender_user_id_..')* \n ☑┇بالفعل تم تنزيله من اعضاء الممزين البوت', 1, 'md')
-tsX000("prore",msg,"☑┇بالفعل تم تنزيله من اعضاء الممزين البوت")  
+send(msg.chat_id_, msg.id_, 1, '👤┇العضو ~⪼ *('..result.sender_user_id_..')* \n ❌┇بالفعل تم تنزيله من اعضاء الممزين البوت', 1, 'md')
+tsX000("prore",msg,"❌┇بالفعل تم تنزيله من اعضاء الممزين البوت")  
 else
 database:srem(hash, result.sender_user_id_)
-tsX000("prore",msg,"☑┇تم تنزيله من اعضاء الممزين البوت")
+tsX000("prore",msg,"❌┇تم تنزيله من اعضاء الممزين البوت")
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,demote_by_reply)
@@ -2295,7 +2295,7 @@ local apmd = {string.match(text, "^(تنزيل عضو مميز) @(.*)$")}
 function demote_by_username(extra, result, success)
 if result.id_ then
 database:srem(hash, result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n☑┇تم تنزيله من اعضاء الممزين البوت'
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n❌┇تم تنزيله من اعضاء الممزين البوت'
 else
 texts = '✖┇خطاء'
 end
@@ -2308,24 +2308,24 @@ if text:match("^تنزيل عضو مميز (%d+)$") and is_owner(msg) then
 local hash =  'madmax:'..bot_id..'vipgp:'..msg.chat_id_
 local apmd = {string.match(text, "^(تنزيل عضو مميز) (%d+)$")}
 database:srem(hash, apmd[2])
-tsX000(apmd[2],msg,"☑┇تم تنزيله من اعضاء الممزين البوت")
+tsX000(apmd[2],msg,"❌┇تم تنزيله من اعضاء الممزين البوت")
 end  
-if text:match("^حظر$") and is_mod(msg) and msg.reply_to_message_id_ ~= 0 then
+if text:match("^حضر$") and is_mod(msg) and msg.reply_to_message_id_ ~= 0 then
 if not is_creator(msg) and database:get("Madmax:lock:ban_and_kick"..bot_id..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_, 1, '✖┇لا تستطيع حظر', 1, 'md')
-return "tshakke"
+send(msg.chat_id_, msg.id_, 1, '❌┇لا تستطيع حضر', 1, 'md')
+return "madmaax"
 end
 function ban_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'banned:'..msg.chat_id_
 if ck_mod(result.sender_user_id_, msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع حظر \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇لا تستطيع حضر \n🔜┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
 else
 if database:sismember(hash, result.sender_user_id_) then
-tsX000("prore",msg,"☑┇بالفعل تم حظره من المجموعه")
+tsX000("prore",msg,"✔┇بالفعل تم حضره من المجموعه")
 chat_kick(result.chat_id_, result.sender_user_id_)
 else
 database:sadd(hash, result.sender_user_id_)
-tsX000("prore",msg,"☑┇تم حظره من المجموعه")
+tsX000("prore",msg,"✔┇تم حضره من المجموعه")
 chat_kick(result.chat_id_, result.sender_user_id_)
 end
 end
@@ -2333,16 +2333,16 @@ end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,ban_by_reply)
 end
 
-if text:match("^حظر @(.*)$") and is_mod(msg) then
+if text:match("^حضر @(.*)$") and is_mod(msg) then
 if not is_creator(msg) and database:get("Madmax:lock:ban_and_kick"..bot_id..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_, 1, '✖┇لا تستطيع حظر', 1, 'md')
-return "tshakke"
+send(msg.chat_id_, msg.id_, 1, '✔┇لا تستطيع حضر', 1, 'md')
+return "madmaax"
 end
-local apba = {string.match(text, "^(حظر) @(.*)$")}
+local apba = {string.match(text, "^(حضر) @(.*)$")}
 function ban_by_username(extra, result, success)
 if result.id_ then
 if ck_mod(result.id_, msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع حظر \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇لا تستطيع حظر \n🔜┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
 else
 database:sadd('madmax:'..bot_id..'banned:'..msg.chat_id_, result.id_)
 texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apba[2] or 'madmaxteam')..')\n☑┇تم حظره من المجموعه'
@@ -2356,47 +2356,47 @@ end
 resolve_username(apba[2],ban_by_username)
 end
 
-if text:match("^حظر (%d+)$") and is_mod(msg) then
+if text:match("^حضر (%d+)$") and is_mod(msg) then
 if not is_creator(msg) and database:get("Madmax:lock:ban_and_kick"..bot_id..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_, 1, '✖┇لا تستطيع حظر', 1, 'md')
-return "tshakke"
+send(msg.chat_id_, msg.id_, 1, '❌┇لا تستطيع حضر', 1, 'md')
+return "madmaax"
 end
 local apba = {string.match(text, "^([Bb][Aa][Nn]) (%d+)$")}
 if ck_mod(apba[2], msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع حظر \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇لا تستطيع حظر \n🔜┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
 else
 database:sadd('madmax:'..bot_id..'banned:'..msg.chat_id_, apba[2])
 chat_kick(msg.chat_id_, apba[2])  
-tsX000(apba[2],msg,"☑┇تم حظره من المجموعه")
+tsX000(apba[2],msg,"✔┇تم حضره من المجموعه")
 end
 end
 ----------------------------------------------unban--------------------------------------------
-if text:match("^الغاء حظر$") and is_mod(msg) and msg.reply_to_message_id_ then
+if text:match("^الغاء حضر$") and is_mod(msg) and msg.reply_to_message_id_ then
 function unban_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'banned:'..msg.chat_id_
 if not database:sismember(hash, result.sender_user_id_) then
-tsX000("prore",msg,"☑┇بالفعل تم الغاء حظره من البوت")
+tsX000("prore",msg,"✔┇بالفعل تم الغاء حضره من البوت")
 else
 database:srem(hash, result.sender_user_id_)
-tsX000("prore",msg,"☑┇تم الغاء حظره من البوت")
+tsX000("prore",msg,"✔┇تم الغاء حضره من البوت")
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,unban_by_reply)
 end
 if is_mod(msg) then 
-if text:match("وضع رابط (https://telegram.me/joinchat/%S+)") or text:match("وضع رابط (https://t.me/joinchat/%S+)") then   
-local glink = text:match("وضع رابط (https://telegram.me/joinchat/%S+)") or text:match("وضع رابط (https://t.me/joinchat/%S+)") 
+if text:match("ضع رابط (https://telegram.me/joinchat/%S+)") or text:match("وضع رابط (https://t.me/joinchat/%S+)") then   
+local glink = text:match("ضع رابط (https://telegram.me/joinchat/%S+)") or text:match("وضع رابط (https://t.me/joinchat/%S+)") 
 database:set('madmax:'..bot_id.."group:link"..msg.chat_id_,glink) 
-send(msg.chat_id_, msg.id_, 1, '☑️┇تم وضع رابط', 1, 'md') 
-send(msg.chat_id_, 0, 1, '↙️┇رابط المجموعه الجديد\n'..glink, 1, 'html')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم وضع رابط', 1, 'md') 
+send(msg.chat_id_, 0, 1, '🔖┇رابط المجموعه الجديد\n'..glink, 1, 'html')
 end 
 end
-if text:match("^الغاء حظر @(.*)$") and is_mod(msg) then
-local apba = {string.match(text, "^(الغاء حظر) @(.*)$")}
+if text:match("^الغاء حضر @(.*)$") and is_mod(msg) then
+local apba = {string.match(text, "^(الغاء حضر) @(.*)$")}
 function unban_by_username(extra, result, success)
 if result.id_ then
 database:srem('madmax:'..bot_id..'banned:'..msg.chat_id_, result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apba[2] or 'madmaxteam')..')\n☑┇تم الغاء حظره من البوت' 
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apba[2] or 'madmaxteam')..')\n✔┇تم الغاء حضره من البوت' 
 else
 texts = '✖┇خطاء'
 end
