@@ -1665,7 +1665,7 @@ end -- end fun
 function TSsudo(msg)
 text = msg.content_.text_
 if msg.content_.text_ then
-if text:match("^مغادره$") then
+if text:match("^مغادره المجموعه$") then
 if not database:get('madmax:'..bot_id..'leave:groups') then
 chat_leave(msg.chat_id_, bot_id)
 send(msg.chat_id_, msg.id_, 1, "✔┇تم مغادره المجموعه", 1, 'md')
@@ -1843,8 +1843,8 @@ os.execute('wget https://raw.githubusercontent.com/MadMaXTEAM/Madmax/master/Madm
 os.exit()
 return false
 end
-if text:match("^ضع وقت (%d+)$") then
-local a = {string.match(text, "^(ضع وقت) (%d+)$")}
+if text:match("^ضع وقت للمجموعه (%d+)$") then
+local a = {string.match(text, "^(ضع وقت للمجموعه) (%d+)$")}
 local time = a[2] * day
 database:setex( 'madmax:'..bot_id.."charge:"..msg.chat_id_,time,true)
 database:set( 'madmax:'..bot_id.."enable:"..msg.chat_id_,true)
@@ -1860,8 +1860,8 @@ local d = math.floor(ex / day ) + 1
 send(msg.chat_id_, msg.id_, 1, "❕┇عدد ايام وقت المجموعه {"..d.."} يوم", 1, 'md')
 end
 end
-if text:match("^مغادره (-%d+)$")  then
-local txt = {string.match(text, "^(مغادره) (-%d+)$")}
+if text:match("^مغادره المجموعه (-%d+)$")  then
+local txt = {string.match(text, "^(مغادره المجموعه) (-%d+)$")}
 send(msg.chat_id_, msg.id_, 1, '🔘┇المجموعه {'..txt[2]..'} تم الخروج منها', 1, 'md')
 database:del("madmax:gog"..bot_id,txt[2])
 chat_leave(txt[2], bot_id)
@@ -2384,8 +2384,8 @@ end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,unban_by_reply)
 end
 if is_mod(msg) then 
-if text:match("ضع رابط (https://telegram.me/joinchat/%S+)") or text:match("وضع رابط (https://t.me/joinchat/%S+)") then   
-local glink = text:match("ضع رابط (https://telegram.me/joinchat/%S+)") or text:match("وضع رابط (https://t.me/joinchat/%S+)") 
+if text:match("ضع رابط للمجموعه(https://telegram.me/joinchat/%S+)") or text:match("وضع رابط (https://t.me/joinchat/%S+)") then   
+local glink = text:match("ضع رابط للمجموعه(https://telegram.me/joinchat/%S+)") or text:match("وضع رابط (https://t.me/joinchat/%S+)") 
 database:set('madmax:'..bot_id.."group:link"..msg.chat_id_,glink) 
 send(msg.chat_id_, msg.id_, 1, '✔┇تم وضع رابط', 1, 'md') 
 send(msg.chat_id_, 0, 1, '🔖┇رابط المجموعه الجديد\n'..glink, 1, 'html')
@@ -3197,7 +3197,7 @@ database:set('madmax:'..bot_id..'flood:max:'..msg.chat_id_,floodmax[2])
 send(msg.chat_id_, msg.id_, 1, '✔┇تم  وضع التكرار بالطرد للعدد ~⪼  *{'..floodmax[2]..'}*', 1, 'md')
 end
 end
-if text and text == "ضع رابط" and is_admin(msg) then 
+if text and text == "ضع رابط للمجموعه" and is_admin(msg) then 
 send(msg.chat_id_, msg.id_, 1, '💥┇ارسال الان رابط المجموعه', 1, "md") 
 database:set("lion:get:url:"..bot_id..msg.chat_id_..msg.sender_user_id_,true)
 return "lion"
@@ -3265,7 +3265,7 @@ if text:match("^تعطيل الترحيب$") and is_mod(msg) then
 send(msg.chat_id_, msg.id_, 1, '❌┇تم تعطيل الترحيب في المجموعه', 1, 'md')
 database:del('madmax:'..bot_id.."welcome"..msg.chat_id_)
 end
-if text:match("^ضع ترحيب (.*)$") and is_mod(msg) then
+if text:match("^ضع ترحيب للمجموعه(.*)$") and is_mod(msg) then
 local welcome = {string.match(text, "^(ضع ترحيب) (.*)$")}
 send(msg.chat_id_, msg.id_, 1, '✔┇تم وضع ترحيب\n📜┇~⪼('..welcome[2]..')', 1, 'md')
 database:set('madmax:'..bot_id..'welcome:'..msg.chat_id_,welcome[2])
@@ -3367,7 +3367,7 @@ send(msg.chat_id_, msg.id_, 1, "📨┇عدد سحكاتك ~⪼ *{"..edit.."}*",
 end
 if text == 'مسح سحكاتي' then 
 database:del('madmax:'..bot_id..'user:editmsg'..msg.chat_id_..':'..msg.sender_user_id_)
-local taha = '📨┇تم مسح سحكاتك'
+local taha = '✔┇تم مسح سحكاتك'
 send(msg.chat_id_, msg.id_, 1, taha, 1, 'md')
 end
 if text:match("^مسح قائمه العام$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
@@ -3387,7 +3387,7 @@ database:set("madmax:not:word:"..bot_id..msg.chat_id_,madmax_0[2])
 end
 if text:match("^مسح (.*)$") and is_mod(msg) then
 local txt = {string.match(text, "^(مسح) (.*)$")}
-if txt[2] == 'banlist' or txt[2] == 'Banlist' or txt[2] == 'المحظورين' then
+if txt[2] == 'banlist' or txt[2] == 'Banlist' or txt[2] == 'المحضورين' then
 database:del('madmax:'..bot_id..'banned:'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح المحظورين من البوت ', 1, 'md')
 end
@@ -4115,7 +4115,7 @@ database:del("lion:set:ttt:p"..bot_id..msg.sender_user_id_)
 return "lion"
 end
 if text and database:get("lion:set:ttt:p2"..bot_id..msg.sender_user_id_) then 
-send(msg.chat_id_, msg.id_, 1, '☑┇تم الحفط', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم الحفط', 1, 'md')
 lion = database:get("lion:set:ttt:ppp:"..bot_id..msg.sender_user_id_)
 database:sadd("lion:all:pppp:tt:"..bot_id,lion)
 database:set("lion:set:text:p"..bot_id..lion,text)
@@ -4306,8 +4306,8 @@ if text:match("^مسح الصوره") and is_mod(msg) then
 https.request('https://api.telegram.org/bot'..token..'/deleteChatPhoto?chat_id='..msg.chat_id_)
 send(msg.chat_id_, msg.id_, 1, '🗑┇تم مسح الصوره', 1, 'md')
 end
-if text:match("^ضع وصف (.*)$") and is_mod(msg) then
-local text = {string.match(text, "^(ضع وصف) (.*)$")}
+if text:match("^ضع وصف للمجموعه(.*)$") and is_mod(msg) then
+local text = {string.match(text, "^(ضع وصف للمجموعه) (.*)$")}
 bot.changeChannelAbout(msg.chat_id_,text[2])
 send(msg.chat_id_, msg.id_, 1, "✔┇تم وضع وصف للمجموعه", 1, 'md')
 end  
