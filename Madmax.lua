@@ -1792,12 +1792,12 @@ database:del("madmax:gog"..bot_id)
 database:del('madmax:'..bot_id.."enable:"..gps[i])
 database:del( 'madmax:'..bot_id.."charge:"..gps[i])
 end
-send(msg.chat_id_, msg.id_, 1, '🔌┇تم تعطيل كل الكروبات ~⪼  *{'..#gps..'}*', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم تعطيل كل الكروبات ~⪼  *{'..#gps..'}*', 1, 'md')
 end
 if text:match("^مغادره الكل$") then
 local gps = database:smembers('madmax:'..bot_id.."groups") or 0
 local gps2 = database:smembers("madmax:gog"..bot_id) or 0
-send(msg.chat_id_, msg.id_, 1, '💣┇تم مغادره كل الكروبات ~⪼  *{'..#gps..'}*', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مغادره كل الكروبات ~⪼  *{'..#gps..'}*', 1, 'md')
 for i=1,#gps do
 database:del('madmax:'..bot_id.."enable:"..gps[i])
 chat_leave(msg.chat_id_, bot_id)
@@ -1848,7 +1848,7 @@ local a = {string.match(text, "^(ضع وقت) (%d+)$")}
 local time = a[2] * day
 database:setex( 'madmax:'..bot_id.."charge:"..msg.chat_id_,time,true)
 database:set( 'madmax:'..bot_id.."enable:"..msg.chat_id_,true)
-send(msg.chat_id_, msg.id_, 1, '🔘┇تم وضع وقت انتهاء البوت *{'..a[2]..'}* يوم', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم وضع وقت انتهاء البوت *{'..a[2]..'}* يوم', 1, 'md')
 end--
 if text:match("^وقت المجموعه (-%d+)$") then
 local txt = {string.match(text, "^(وقت المجموعه) (-%d+)$")}
@@ -1992,7 +1992,7 @@ send(msg.chat_id_, msg.id_, 1, "❌┇تم تعطيل {"..name_t[2]..".lua}", 1,
 end
 if (text:match("^(مسح جميع الملفات)$"))then
 database:del("files"..bot_id)
-send(msg.chat_id_, msg.id_, 1, "🗑┇تم مسح جميع الملفات", 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم مسح جميع الملفات", 1, 'html')
 end
 if text:match("^(مسح ملف) (.*)(.lua)$") then
 local name_t = {string.match(text, "^(مسح ملف) (.*)(.lua)$")}
@@ -2004,8 +2004,8 @@ if (msg.content_.text_ == 'اضف ملف' ) then
 send(msg.chat_id_, msg.id_, 1, " 📥┇ ارسل ملف الان", 1, 'html')
 database:set("addfiel"..msg.sender_user_id_,"yes")
 end
-if text:match("^(جيبلي ملف) (.*)(.lua)$") then
-local name_t = {string.match(text, "^(جيبلي ملف) (.*)(.lua)$")}
+if text:match("^(جيب الملف) (.*)(.lua)$") then
+local name_t = {string.match(text, "^(جيب الملف) (.*)(.lua)$")}
 send(msg.chat_id_, msg.id_, 1, "🕡┇ انتظر بعض الوقت وسيتم جلب \n 🗂┇ملف : {"..name_t[2]..".lua}", 1, 'html')
 local madmaxe = 'https://api.telegram.org/bot' .. token .. '/sendDocument'
 local curl = 'curl "' .. madmaxe .. '" -F "chat_id=' .. msg.chat_id_ .. '" -F "document=@' .. 'files_madmax/'..name_t[2]..'.lua' .. '"'
@@ -2363,7 +2363,7 @@ return "madmaax"
 end
 local apba = {string.match(text, "^([Bb][Aa][Nn]) (%d+)$")}
 if ck_mod(apba[2], msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, '❌┇لا تستطيع حظر \n🔜┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇لا تستطيع حضر \n🔜┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
 else
 database:sadd('madmax:'..bot_id..'banned:'..msg.chat_id_, apba[2])
 chat_kick(msg.chat_id_, apba[2])  
@@ -2405,13 +2405,13 @@ end
 resolve_username(apba[2],unban_by_username)
 end
 
-if text:match("^الغاء حظر (%d+)$") and is_mod(msg) then
-local apba = {string.match(text, "^(الغاء حظر) (%d+)$")}
+if text:match("^الغاء حضر (%d+)$") and is_mod(msg) then
+local apba = {string.match(text, "^(الغاء حضر) (%d+)$")}
 database:srem('madmax:'..bot_id..'banned:'..msg.chat_id_, apba[2])
-tsX000(apba[2],msg,"☑┇تم الغاء حظره من البوت") 
+tsX000(apba[2],msg,"✔┇تم الغاء حضره من البوت") 
 end
 
-if text:match("^الغاء حظر$") and is_mod(msg) and msg.reply_to_message_id_ then
+if text:match("^الغاء حضر$") and is_mod(msg) and msg.reply_to_message_id_ then
 function moody(extra, result, success)
 function unban_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'banned:'..msg.chat_id_
@@ -2425,8 +2425,8 @@ end
 bot.channel_get_kicked(msg.chat_id_,moody)
 end
 
-if text:match("^الغاء حظر @(.*)$") and is_mod(msg) then
-local apba = {string.match(text, "^(الغاء حظر) @(.*)$")}
+if text:match("^الغاء حضر @(.*)$") and is_mod(msg) then
+local apba = {string.match(text, "^(الغاء حضر) @(.*)$")}
 function moody(extra, result, success)
 function unban_by_username(extra, result, success)
 if result.id_ then
@@ -2443,8 +2443,8 @@ end
 bot.channel_get_kicked(msg.chat_id_,moody)
 end
 
-if text:match("^الغاء حظر (%d+)$") and is_mod(msg) then
-local apba = {string.match(text, "^(الغاء حظر) (%d+)$")}
+if text:match("^الغاء حضر (%d+)$") and is_mod(msg) then
+local apba = {string.match(text, "^(الغاء حضر) (%d+)$")}
 function moody(extra, result, success)
 database:srem('madmax:'..bot_id..'banned:'..msg.chat_id_, apba[2])
 if tonumber(bot_id) ~= tonumber(apba[2]) then 
@@ -2454,30 +2454,30 @@ end
 bot.channel_get_kicked(msg.chat_id_,moody)
 end
 
-if text:match("^حذف الكل$") and is_owner(msg) and msg.reply_to_message_id_ then
+if text:match("^مسح الكل$") and is_owner(msg) and msg.reply_to_message_id_ then
 function delall_by_reply(extra, result, success)
 if ck_mod(result.sender_user_id_, msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع مسح رسائل \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '👤┇العضو ~⪼ *('..result.sender_user_id_..')* \n🗑┇تم حذف كل رسائله\n', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '👤┇العضو ~⪼ *('..result.sender_user_id_..')* \n✔┇تم مسح كل رسائله\n', 1, 'md')
 del_all_msgs(result.chat_id_, result.sender_user_id_)
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,delall_by_reply)
 end
 
-if text:match("^حذف الكل (%d+)$") and is_owner(msg) then
-local ass = {string.match(text, "^(حذف الكل) (%d+)$")}
+if text:match("^مسح الكل (%d+)$") and is_owner(msg) then
+local ass = {string.match(text, "^(مسح الكل) (%d+)$")}
 if ck_mod(ass[2], msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع مسح رسائل \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
 else
 del_all_msgs(msg.chat_id_, ass[2])
-send(msg.chat_id_, msg.id_, 1, '👤┇العضو ~⪼ *('..ass[2]..')* \n🗑┇تم حذف كل رسائله\n', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '👤┇العضو ~⪼ *('..ass[2]..')* \n✔┇تم مسح كل رسائله\n', 1, 'md')
 end
 end
 
-if text:match("^حذف الكل @(.*)$") and is_owner(msg) then
-local apbll = {string.match(text, "^(حذف الكل) @(.*)$")}
+if text:match("^مسح الكل @(.*)$") and is_owner(msg) then
+local apbll = {string.match(text, "^(مسح الكل) @(.*)$")}
 function delall_by_username(extra, result, success)
 if result.id_ then
 if ck_mod(result.id_, msg.chat_id_) then
@@ -2485,7 +2485,7 @@ send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع مسح رسائل \n🔘
 return false
 end
 del_all_msgs(msg.chat_id_, result.id_)
-texts = '👤┇العضو ~⪼ ('..result.id_..') \n🗑┇تم حذف كل رسائله'
+texts = '👤┇العضو ~⪼ ('..result.id_..') \n✔┇تم مسح كل رسائله'
 else
 texts = '✖┇خطاء'
 end
@@ -2494,26 +2494,26 @@ end
 resolve_username(apbll[2],delall_by_username)
 end
 -----------------------------------------banall--------------------------------------------------
-if text:match("^حظر عام$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) and msg.reply_to_message_id_ then
+if text:match("^حضر عام$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) and msg.reply_to_message_id_ then
 function gban_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'gbanned:'
 if is_admin(result) then
-send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع حظر عام \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع حضر عام \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
 else
 database:sadd(hash, result.sender_user_id_)
 chat_kick(result.chat_id_, result.sender_user_id_)
-tsX000("prore",msg,"🚫┇تم حظره من مجموعات البوت")
+tsX000("prore",msg,"🚫┇تم حضره من مجموعات البوت")
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,gban_by_reply)
 end
 
-if text:match("^حظر عام @(.*)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
-local apbll = {string.match(text, "^(حظر عام) @(.*)$")}
+if text:match("^حضر عام @(.*)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+local apbll = {string.match(text, "^(حضر عام) @(.*)$")}
 function gban_by_username(extra, result, success)
 if result.id_ then
 if ck_admin(result.id_) then
-send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع حظر عام \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع حضر عام \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
 else
 local hash =  'madmax:'..bot_id..'gbanned:'
 texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apbll[2] or 'madmaxteam')..')\n🚫┇تم حظره من المجموعات البوت'
@@ -2527,14 +2527,14 @@ end
 resolve_username(apbll[2],gban_by_username)
 end
 
-if text:match("^حظر عام (%d+)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
-local apbll = {string.match(text, "^(حظر عام) (%d+)$")}
+if text:match("^حضر عام (%d+)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+local apbll = {string.match(text, "^(حضر عام) (%d+)$")}
 local hash =  'madmax:'..bot_id..'gbanned:'
 if ck_admin(apbll[2]) then
-send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع حظر عام \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع حضر عام \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
 else
 database:sadd(hash, apbll[2])
-tsX000(apbll[2],msg,"🚫┇تم حظره من المجموعات البوت")
+tsX000(apbll[2],msg,"🚫┇تم حضره من المجموعات البوت")
 end
 end
 if text:match("^الغاء العام$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) and msg.reply_to_message_id_ then
@@ -2768,10 +2768,10 @@ if text:match("^رفع مدير$") and is_creator(msg) and msg.reply_to_message_
 function setowner_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'owners:'..msg.chat_id_
 if database:sismember(hash, result.sender_user_id_) then
-tsX000("prore",msg,"☑┇بالفعل تم رفع مدير في البوت")
+tsX000("prore",msg,"✔┇بالفعل تم رفع مدير في البوت")
 else
 database:sadd(hash, result.sender_user_id_)
-tsX000("prore",msg,"☑┇تم رفع مدير في البوت")
+tsX000("prore",msg,"✔┇تم رفع مدير في البوت")
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,setowner_by_reply)
@@ -2781,7 +2781,7 @@ local apow = {string.match(text, "^(رفع مدير) @(.*)$")}
 function setowner_by_username(extra, result, success)
 if result.id_ then
 database:sadd('madmax:'..bot_id..'owners:'..msg.chat_id_, result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apow[2] or 'madmaxteam')..')\n☑┇تم رفع مدير في البوت'
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apow[2] or 'madmaxteam')..')\n✔┇تم رفع مدير في البوت'
 else
 texts = '✖┇خطاء'
 end
@@ -2792,16 +2792,16 @@ end
 if text:match("^رفع مدير (%d+)$") and is_creator(msg) then
 local apow = {string.match(text, "^(رفع مدير) (%d+)$")}
 database:sadd('madmax:'..bot_id..'owners:'..msg.chat_id_, apow[2])
-tsX000(apow[2],msg,"☑┇تم رفع مدير في البوت")
+tsX000(apow[2],msg,"✔┇تم رفع مدير في البوت")
 end  
 if text:match("^تنزيل مدير$") and is_creator(msg) and msg.reply_to_message_id_ then
 function deowner_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'owners:'..msg.chat_id_
 if not database:sismember(hash, result.sender_user_id_) then
-tsX000("prore",msg,"☑┇بالفعل تم تنزيله من مدراء البوت")
+tsX000("prore",msg,"✔┇بالفعل تم تنزيله من مدراء البوت")
 else
 database:srem(hash, result.sender_user_id_)
-tsX000("prore",msg,"☑┇تم تنزيله من مدراء البوت")
+tsX000("prore",msg,"✔┇تم تنزيله من مدراء البوت")
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,deowner_by_reply)
@@ -2812,7 +2812,7 @@ local hash =  'madmax:'..bot_id..'owners:'..msg.chat_id_
 function remowner_by_username(extra, result, success)
 if result.id_ then
 database:srem(hash, result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apow[2] or 'madmaxteam')..')\n☑┇تم تنزيله من مدراء البوت'
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apow[2] or 'madmaxteam')..')\n✔┇تم تنزيله من مدراء البوت'
 else
 texts = '✖┇خطاء'
 end
@@ -2824,7 +2824,7 @@ if text:match("^تنزيل مدير (%d+)$") and is_creator(msg) then
 local hash =  'madmax:'..bot_id..'owners:'..msg.chat_id_
 local apow = {string.match(text, "^(تنزيل مدير) (%d+)$")}
 database:srem(hash, apow[2])
-tsX000(apow[2],msg,"☑┇تم تنزيله من مدراء البوت")
+tsX000(apow[2],msg,"✔┇تم تنزيله من مدراء البوت")
 end
 if text:match("^الادمنيه$") and is_owner(msg) then
 local hash =   'madmax:'..bot_id..'mods:'..msg.chat_id_
@@ -2863,7 +2863,7 @@ if (database:get("madmax:fel:msg:me:"..bot_id..msg.chat_id_..msg.reply_to_messag
 x = database:get("madmax:fel:msg:me:"..bot_id..msg.chat_id_..msg.reply_to_message_id_)
 y = database:get("madmax:fel:o:me:"..bot_id..msg.chat_id_) or 10
 if tonumber(x) >= tonumber(y) then 
-send(msg.chat_id_, 0, 1, "⚠┇تم حذف الرساله", 1, 'html')
+send(msg.chat_id_, 0, 1, "⚠┇تم مسح الرساله", 1, 'html')
 delete_msg(msg.chat_id_, {[0] = msg.reply_to_message_id_})
 end
 end
@@ -2871,11 +2871,11 @@ end
 end
 if (text and text == "تعطيل الابلاغ" and is_creator(msg)) then 
 database:set("madmax:mute:deleta:msg:"..bot_id..msg.chat_id_,"MADMAXE")
-send(msg.chat_id_, msg.id_, 1, "🔓┇تم تعطيل خاصيه الابلاغ", 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "❌┇تم تعطيل خاصيه الابلاغ", 1, 'html')
 end
 if (text and text == "تفعيل الابلاغ" and is_creator(msg)) then 
 database:del("madmax:mute:deleta:msg:"..bot_id..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 1, "🔓┇تم تفعيل خاصيه الابلاغ", 1, 'html')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم تفعيل خاصيه الابلاغ", 1, 'html')
 end
 if text and text:match("(تعين عدد الابلاغ) (%d+)") and is_creator(msg) then 
 local a = {string.match(text, "^(تعين عدد الابلاغ) (%d+)$")}
@@ -2885,7 +2885,7 @@ end
 if text:match("^الاعضاء المميزين") and is_owner(msg) then
 local hash =   'madmax:'..bot_id..'vipgp:'..msg.chat_id_
 local list = database:smembers(hash)
-text = "👥┇قائمة الاعضاء المميزين ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+text = "👥┇قائمه الاعضاء المميزين ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local user_info = database:hgetall('madmax:'..bot_id..'user:'..v)
 if user_info and user_info.username then
@@ -2940,7 +2940,7 @@ end
 if text:match("^المكتومين$") and is_mod(msg) then
 local hash =   'madmax:'..bot_id..'muted:'..msg.chat_id_
 local list = database:smembers(hash)
-text = "🚫┇قائمة المكتومين  ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+text = "🚫┇قائمه المكتومين  ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local user_info = database:hgetall('madmax:'..bot_id..'user:'..v)
 if user_info and user_info.username then
@@ -2962,7 +2962,7 @@ end
 if text:match("^المدراء$") and is_creator(msg) then
 local hash =   'madmax:'..bot_id..'owners:'..msg.chat_id_
 local list = database:smembers(hash)
-text = "🛄┇قائمة المدراء  ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+text = "🛄┇قائمه المدراء  ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local user_info = database:hgetall('madmax:'..bot_id..'user:'..v)
 if user_info and user_info.username then
@@ -2981,10 +2981,10 @@ text = "✖┇لايوجد مدراء"
 end
 send(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end
-if text:match("^المحظورين$") and is_mod(msg) then
+if text:match("^المحضورين$") and is_mod(msg) then
 local hash =   'madmax:'..bot_id..'banned:'..msg.chat_id_
 local list = database:smembers(hash)
-text = "⛔┇قائمة المحظورين  ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+text = "⛔┇قائمه المحضورين  ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local user_info = database:hgetall('madmax:'..bot_id..'user:'..v)
 if user_info and user_info.username then
@@ -2999,14 +2999,14 @@ text = ""
 end
 end
 if #list == 0 then
-text = "✖┇لايوجد محظورين"
+text = "✖┇لايوجد محضورين"
 end
 send(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end
 if  msg.content_.text_:match("^قائمه العام$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 local hash =   'madmax:'..bot_id..'gbanned:'
 local list = database:smembers(hash)
-text = "⛔┇قائمة الحظر العام  ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+text = "⛔┇قائمه الحصر العام  ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local user_info = database:hgetall('madmax:'..bot_id..'user:'..v)
 if user_info and user_info.username then
@@ -3021,14 +3021,14 @@ text = ""
 end
 end
 if #list == 0 then
-text = "✖┇لايوجد محظورين عام"
+text = "✖┇لايوجد محضورين عام"
 end
 send(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end
 if  msg.content_.text_:match("^المكتومين عام$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 local hash =   'madmax:'..bot_id..'gmuted:'
 local list = database:smembers(hash)
-text = "⛔┇قائمة الكتم العام  ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+text = "⛔┇قائمه الكتم العام  ،\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local user_info = database:hgetall('madmax:'..bot_id..'user:'..v)
 if user_info and user_info.username then
