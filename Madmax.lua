@@ -3171,8 +3171,8 @@ send(msg.chat_id_, msg.id_, 1, texts, 1, 'md')
 end
 resolve_username(ap[2],id_by_username)
 end  
-if text:match("^جلب صوره (%d+)$") and msg.reply_to_message_id_ == 0 and not database:get('madmax:'..bot_id..'get:photo'..msg.chat_id_) then
-local pronumb = {string.match(text, "^(جلب صوره) (%d+)$")}
+if text:match("^صورتي (%d+)$") and msg.reply_to_message_id_ == 0 and not database:get('madmax:'..bot_id..'get:photo'..msg.chat_id_) then
+local pronumb = {string.match(text, "^(صورتي) (%d+)$")}
 local ph = pronumb[2] - 1
 local function gpro(extra, result, success)
 if result.photos_[ph] then
@@ -3862,7 +3862,7 @@ end
 end
 end
 
-if (text and text == 'تغير امر المطور بالكليشه') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+if (text and text == 'تغير كليشه المطور') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 send(msg.chat_id_, msg.id_, 1, '📥┇الان يمكنك ارسائل الكليشه  ليتم حفظها', 1, 'html')
 redis:set('madmax:'..bot_id..'texts'..msg.sender_user_id_..'', 'msg')
 return false end
@@ -3882,11 +3882,11 @@ local nalion = redis:get('madmax:'..bot_id..'nalion')
 if text_sudo then
 send(msg.chat_id_, msg.id_, 1, text_sudo, 1, 'md')
 else
-sendContact(msg.chat_id_, msg.id_, 0, 1, nil, (nlion or 9647723177600), (nalion or "MadMax TEAM"), "", bot_id)
+sendContact(msg.chat_id_, msg.id_, 0, 1, nil, (nlion or 9647700000000), (nalion or "MadMax TEAM"), "", bot_id)
 end
 end
 for k,v in pairs(sudo_users) do
-if text:match("^تغير امر المطور$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+if text:match("^تغير رقم المطور$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 send(msg.chat_id_, msg.id_, 1, '• `الان يمكنك ارسائل رقم المطور` 🗳', 1, 'md')
 redis:set('madmax:'..bot_id..'nlion'..msg.sender_user_id_..'', 'msg')
 return false end
@@ -3911,7 +3911,7 @@ sendContact(msg.chat_id_, msg.id_, 0, 1, nil, nmlion, text , "", bot_id)
 return false end
 end
 
-if text:match("^رفع مطورر$")  and tonumber(msg.sender_user_id_) == tonumber(sudo_add) and msg.reply_to_message_id_ then
+if text:match("^رفع مطور$")  and tonumber(msg.sender_user_id_) == tonumber(sudo_add) and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
 if redis:sismember('madmax:'..bot_id..'dev', result.sender_user_id_) then
 tsX000("prore",msg,'☑┇بالفعل تم رفعه مطور')
@@ -3924,8 +3924,8 @@ end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,promote_by_reply)
 end
 
-if text:match("^رفع مطورر @(.*)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
-local apmd = {string.match(text, "^(رفع مطورر) @(.*)$")}
+if text:match("^رفع مطور @(.*)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+local apmd = {string.match(text, "^(رفع مطور) @(.*)$")}
 function promote_by_username(extra, result, success)
 if result.id_ then
 redis:set('madmax:'..bot_id..'sudoo'..result.id_..'', 'yes')
@@ -3939,8 +3939,8 @@ end
 resolve_username(apmd[2],promote_by_username)
 end
 
-if text:match("^رفع مطورر (%d+)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
-local apmd = {string.match(text, "^(رفع مطورر) (%d+)$")}
+if text:match("^رفع مطور (%d+)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+local apmd = {string.match(text, "^(رفع مطور) (%d+)$")}
 redis:set('madmax:'..bot_id..'sudoo'..apmd[2]..'', 'yes')
 redis:sadd('madmax:'..bot_id..'dev', apmd[2])
 tsX000(apmd[2],msg,'☑┇تم رفعه مطور')
@@ -4362,7 +4362,7 @@ send(msg.chat_id_, msg.id_, 1, '☑┇تم تعطيل الايدي بالصور�
 database:set('madmax:'..bot_id..'id:photo'..msg.chat_id_,true)
 end
 end
-if (text and text == 'تفعيل جلب صوره') and is_owner(msg) then
+if (text and text == 'تفعيل صورتي') and is_owner(msg) then
 if not database:get('madmax:'..bot_id..'get:photo'..msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, '☑┇جلب صوره بالفعل تم تفعيله', 1, 'md')
 else
@@ -4370,7 +4370,7 @@ send(msg.chat_id_, msg.id_, 1, '☑┇تم تفعيل جلب صوره', 1, 'md')
 database:del('madmax:'..bot_id..'get:photo'..msg.chat_id_)
 end
 end
-if (text and text == 'تعطيل جلب صوره') and is_owner(msg) then
+if (text and text == 'تعطيل صورتي') and is_owner(msg) then
 if database:get('madmax:'..bot_id..'get:photo'..msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, '☑┇جلب صوره بالفعل تم تعطيله', 1, 'md')
 else
@@ -4378,19 +4378,19 @@ send(msg.chat_id_, msg.id_, 1, '☑┇تم تعطيل جلب صوره', 1, 'md')
 database:set('madmax:'..bot_id..'get:photo'..msg.chat_id_,true)
 end
 end
-if  (text and text == 'تفعيل ضع المدفوع') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+if  (text and text == 'تفعيل وضع المدفوع') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 if database:sismember('madmax:'..bot_id..'pro:groups',msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, '☑┇بالفعل تم اضافه المجموعه الى الضع المدفوع', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '☑┇بالفعل تم اضافه المجموعه الى اولضع المدفوع', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم اضافه المجموعه الى الضع المدفوع', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '☑┇تم اضافه المجموعه الى اولضع المدفوع', 1, 'md')
 database:sadd('madmax:'..bot_id..'pro:groups',msg.chat_id_)
 end
 end
-if (text and text == 'تعطيل ضع المدفوع') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+if (text and text == 'تعطيل وضع المدفوع') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 if not database:sismember('madmax:'..bot_id..'pro:groups',msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, '☑┇بالفعل تم مسح المجموعه من الضع المدفوع', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '☑┇بالفعل تم مسح المجموعه من الوضع المدفوع', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح المجموعه من الضع المدفوع', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح المجموعه من الوضع المدفوع', 1, 'md')
 database:srem('madmax:'..bot_id..'pro:groups',msg.chat_id_)
 end
 end
