@@ -3056,21 +3056,21 @@ local msg2 = msg
 local user_msgs = msgs
 local ilion_text = "غير متفاعل"
 if user_msgs then 
-if tonumber(user_msgs) < 50 then 
+if tonumber(user_msgs) < 10 then 
 ilion_text = "غير متفاعل"
 elseif tonumber(user_msgs) < 100 then 
 ilion_text = "آستمر بطل"
 elseif tonumber(user_msgs) < 1000 then 
 ilion_text = "متفآعل "
-elseif tonumber(user_msgs) < 2000 then 
+elseif tonumber(user_msgs) < 10000 then 
 ilion_text = "عضو نشط"
-elseif tonumber(user_msgs) < 3000 then 
+elseif tonumber(user_msgs) < 100000 then 
 ilion_text = "اقوئ تفاعل"
-elseif tonumber(user_msgs) < 4000 then 
+elseif tonumber(user_msgs) < 1000000 then 
 ilion_text = "عضو متفاعل قوي"
-elseif tonumber(user_msgs) < 5000 then 
+elseif tonumber(user_msgs) < 10000000 then 
 ilion_text = "جيد بتفاعل"
-elseif tonumber(user_msgs) > 5000 then 
+elseif tonumber(user_msgs) > 100000000 then 
 ilion_text = "متفاعل كلش"
 end
 lion = database:smembers('lion:all:pppp:tt:'..bot_id) or 0
@@ -3118,21 +3118,21 @@ msg2.sender_user_id_ = result.id_
 local user_msgs = database:get('madmax:'..bot_id..'user:msgs'..msg.chat_id_..':'..result.id_)
 local ilion_text = "غير متفاعل"
 if user_msgs then 
-if tonumber(user_msgs) < 50 then 
+if tonumber(user_msgs) < 10 then 
 ilion_text = "غير متفاعل"
 elseif tonumber(user_msgs) < 100 then 
 ilion_text = "آستمر بطل"
 elseif tonumber(user_msgs) < 1000 then 
 ilion_text = "متفآعل "
-elseif tonumber(user_msgs) < 2000 then 
+elseif tonumber(user_msgs) < 10000 then 
 ilion_text = "عضو نشط"
-elseif tonumber(user_msgs) < 3000 then 
+elseif tonumber(user_msgs) < 100000 then 
 ilion_text = "اقوئ تفاعل"
-elseif tonumber(user_msgs) < 4000 then 
+elseif tonumber(user_msgs) < 1000000 then 
 ilion_text = "عضو متفاعل قوي"
-elseif tonumber(user_msgs) < 5000 then 
+elseif tonumber(user_msgs) < 10000000 then 
 ilion_text = "جيد بتفاعل"
-elseif tonumber(user_msgs) > 5000 then 
+elseif tonumber(user_msgs) > 100000000 then 
 ilion_text = "متفاعل كلش"
 end
 lion = database:smembers('lion:all:pppp:tt:'..bot_id) or 0
@@ -3171,8 +3171,8 @@ send(msg.chat_id_, msg.id_, 1, texts, 1, 'md')
 end
 resolve_username(ap[2],id_by_username)
 end  
-if text:match("^جلب صوره (%d+)$") and msg.reply_to_message_id_ == 0 and not database:get('madmax:'..bot_id..'get:photo'..msg.chat_id_) then
-local pronumb = {string.match(text, "^(جلب صوره) (%d+)$")}
+if text:match("^صورتي (%d+)$") and msg.reply_to_message_id_ == 0 and not database:get('madmax:'..bot_id..'get:photo'..msg.chat_id_) then
+local pronumb = {string.match(text, "^(صورتي) (%d+)$")}
 local ph = pronumb[2] - 1
 local function gpro(extra, result, success)
 if result.photos_[ph] then
@@ -3188,22 +3188,22 @@ offset_ = 0,
 limit_ = pronumb[2]
 }, gpro, nil)
 end
-if text:match("^وضع تكرار (%d+)$") and is_owner(msg) then
-local floodmax = {string.match(text, "^(وضع تكرار) (%d+)$")}
+if text:match("^ضع تكرار (%d+)$") and is_owner(msg) then
+local floodmax = {string.match(text, "^(ضع تكرار) (%d+)$")}
 if tonumber(floodmax[2]) < 2 then
 send(msg.chat_id_, msg.id_, 1, '🔘┇ضع التكرار من *{2}* الى  *{99999}*', 1, 'md')
 else
 database:set('madmax:'..bot_id..'flood:max:'..msg.chat_id_,floodmax[2])
-send(msg.chat_id_, msg.id_, 1, '☑┇تم  وضع التكرار بالطرد للعدد ~⪼  *{'..floodmax[2]..'}*', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم  وضع التكرار بالطرد للعدد ~⪼  *{'..floodmax[2]..'}*', 1, 'md')
 end
 end
-if text and text == "وضع رابط" and is_admin(msg) then 
+if text and text == "ضع رابط" and is_admin(msg) then 
 send(msg.chat_id_, msg.id_, 1, '💥┇ارسال الان رابط المجموعه', 1, "md") 
 database:set("lion:get:url:"..bot_id..msg.chat_id_..msg.sender_user_id_,true)
 return "lion"
 end
 if text and database:get("lion:get:url:"..bot_id..msg.chat_id_..msg.sender_user_id_) and text:match("[Hh][Tt][Tt][pP]") then 
-send(msg.chat_id_, msg.id_, 1, '☑┇تم وضع : ['..text..']', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم وضع : ['..text..']', 1, 'md')
 database:set('madmax:'..bot_id.."group:link"..msg.chat_id_,text)
 database:del("lion:get:url:"..bot_id..msg.chat_id_..msg.sender_user_id_,true)
 return "lion"
@@ -3220,13 +3220,13 @@ if (text and text == "تفعيل الاعلانات" and is_creator(msg)) then
 database:del("madmax:gr:not:ads:"..bot_id..msg.chat_id_..os.date("%x"))
 send(msg.chat_id_, msg.id_, 1, '🖲┇تم تفعيل ضهور الاعلانات \n📊┇ [يمكنك معرفه المزيد حول الاعلانات هنا](https://t.me/MadmaxADS)', 1, "md") 
 end  
-if text:match("^وضع زمن التكرار (%d+)$") and is_owner(msg) then
-local floodt = {string.match(text, "^(وضع زمن التكرار) (%d+)$")}
+if text:match("^ضع زمن التكرار (%d+)$") and is_owner(msg) then
+local floodt = {string.match(text, "^(ضع زمن التكرار) (%d+)$")}
 if tonumber(floodt[2]) < 1 then
 send(msg.chat_id_, msg.id_, 1, '🔘┇ضع العدد من *{1}* الى  *{99999}*', 1, 'md')
 else
 database:set('madmax:'..bot_id..'flood:time:'..msg.chat_id_,floodt[2])
-send(msg.chat_id_, msg.id_, 1, '☑┇تم  وضع الزمن التكرار للعدد ~⪼  *{'..floodt[2]..'}*', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم  وضع الزمن التكرار للعدد ~⪼  *{'..floodt[2]..'}*', 1, 'md')
 end
 end
 if text:match("^الرابط$") then
@@ -3258,43 +3258,43 @@ end
 end
 -----------------------------------------------------------
 if text:match("^تفعيل الترحيب$") and is_mod(msg) then
-send(msg.chat_id_, msg.id_, 1, '☑┇تم تفعيل الترحيب في المجموعه', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم تفعيل الترحيب في المجموعه', 1, 'md')
 database:set('madmax:'..bot_id.."welcome"..msg.chat_id_,true)
 end
 if text:match("^تعطيل الترحيب$") and is_mod(msg) then
-send(msg.chat_id_, msg.id_, 1, '☑┇تم تعطيل الترحيب في المجموعه', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇تم تعطيل الترحيب في المجموعه', 1, 'md')
 database:del('madmax:'..bot_id.."welcome"..msg.chat_id_)
 end
-if text:match("^وضع ترحيب (.*)$") and is_mod(msg) then
-local welcome = {string.match(text, "^(وضع ترحيب) (.*)$")}
-send(msg.chat_id_, msg.id_, 1, '☑┇تم وضع ترحيب\n📜┇~⪼('..welcome[2]..')', 1, 'md')
+if text:match("^ضع ترحيب (.*)$") and is_mod(msg) then
+local welcome = {string.match(text, "^(ضع ترحيب) (.*)$")}
+send(msg.chat_id_, msg.id_, 1, '✔┇تم وضع ترحيب\n📜┇~⪼('..welcome[2]..')', 1, 'md')
 database:set('madmax:'..bot_id..'welcome:'..msg.chat_id_,welcome[2])
 end
-if text:match("^حذف الترحيب$") and is_mod(msg) then
-send(msg.chat_id_, msg.id_, 1, '☑┇تم حذف الترحيب', 1, 'md')
+if text:match("^مسح الترحيب$") and is_mod(msg) then
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح الترحيب', 1, 'md')
 database:del('madmax:'..bot_id..'welcome:'..msg.chat_id_)
 end
-if text:match("^جلب الترحيب$") and is_mod(msg) then
+if text:match("^جيب الترحيب$") and is_mod(msg) then
 local wel = database:get('madmax:'..bot_id..'welcome:'..msg.chat_id_)
 if wel then
-send(msg.chat_id_, msg.id_, 1, '📜┇الترحيب\n~⪼('..wel..')', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇الترحيب\n~⪼('..wel..')', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '✖┇لم يتم وضع ترحيب للمجموعه\n', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇لم يتم وضع ترحيب للمجموعه\n', 1, 'md')
 end
 end  
 if text:match("^منع (.*)$") and is_mod(msg) then
 local filters = {string.match(text, "^(منع) (.*)$")}
 local name = string.sub(filters[2], 1, 50)
 database:hset('madmax:'..bot_id..'filters:'..msg.chat_id_, name, 'filtered')
-send(msg.chat_id_, msg.id_, 1, "☑┇تم اضافتها لقائمه المنع\n🔘┇{"..name.."}", 1, 'md')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم اضافتها لقائمه المنع\n🔘┇{"..name.."}", 1, 'md')
 end  
 if text:match("^الغاء منع (.*)$") and is_mod(msg) then
 local rws = {string.match(text, "^(الغاء منع) (.*)$")}
 local name = string.sub(rws[2], 1, 50)
 database:hdel('madmax:'..bot_id..'filters:'..msg.chat_id_, rws[2])
-send(msg.chat_id_, msg.id_, 1, "☑┇تم حذفها من لقائمه المنع\n🔘┇{"..rws[2].."}", 1, 'md')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم مسحها من لقائمه المنع\n🔘┇{"..rws[2].."}", 1, 'md')
 end  
-if (text and text == "تنظيف قائمه المحظورين" and is_creator(msg)) then 
+if (text and text == "مسح قائمه المحظورين" and is_creator(msg)) then 
 local function getChannelMembers(channel_id, filter, offset, limit, cb)
 if not limit or limit > 200 then
 limit = 200
@@ -3314,7 +3314,7 @@ if t2.members_ then
 for i=1,#t2.members_ do 
 bot.changeChatMemberStatus(msg.chat_id_, t2.members_[i].user_id_, "Left")
 end
-send(msg.chat_id_, msg.id_, 1, '☑┇تم الغاء حظر {'..t2.total_count_..'} عضو', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم الغاء حظر {'..t2.total_count_..'} عضو', 1, 'md')
 end
 end
 getChannelMembers(msg.chat_id_,"Kicked",0,10000,lionididi)
@@ -3365,35 +3365,35 @@ if text:match("^(عدد السحكات)$") or text:match("^(سحكاتي)$") the
 local edit = database:get('madmax:'..bot_id..'user:editmsg'..msg.chat_id_..':'..msg.sender_user_id_) or 0
 send(msg.chat_id_, msg.id_, 1, "📨┇عدد سحكاتك ~⪼ *{"..edit.."}*", 1, 'md')
 end
-if text == 'حذف سحكاتي' then 
+if text == 'مسح سحكاتي' then 
 database:del('madmax:'..bot_id..'user:editmsg'..msg.chat_id_..':'..msg.sender_user_id_)
-local taha = '📨┇تم حذف سحكاتك'
+local taha = '📨┇تم مسح سحكاتك'
 send(msg.chat_id_, msg.id_, 1, taha, 1, 'md')
 end
 if text:match("^مسح قائمه العام$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
-text = '☑┇تم مسح قائمه العام'
+text = '✔┇تم مسح قائمه العام'
 database:del('madmax:'..bot_id..'gbanned:')
 send(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 if text:match("^مسح المكتومين عام") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
-text = '☑┇ تم مسح المكتومين عام'
+text = '✔┇ تم مسح المكتومين عام'
 database:del('madmax:'..bot_id..'gmuted:')
 send(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 if (text:match("^(تعين عدد الاحرف) (%d+)$") and is_mod(msg)) then
 madmax_0 = {string.match(text, "^(تعين عدد الاحرف) (%d+)$")}
-send(msg.chat_id_, msg.id_, 1, '☑┇ تم تعين عدد الاحرف {`'..madmax_0[2]..'`}', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇ تم تعين عدد الاحرف {`'..madmax_0[2]..'`}', 1, 'md')
 database:set("madmax:not:word:"..bot_id..msg.chat_id_,madmax_0[2])
 end
 if text:match("^مسح (.*)$") and is_mod(msg) then
 local txt = {string.match(text, "^(مسح) (.*)$")}
 if txt[2] == 'banlist' or txt[2] == 'Banlist' or txt[2] == 'المحظورين' then
 database:del('madmax:'..bot_id..'banned:'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح المحظورين  من البوت ', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح المحظورين من البوت ', 1, 'md')
 end
 if txt[2] == 'creators' and is_sudo(msg) or txt[2] == 'creatorlist' and is_sudo(msg) or txt[2] == 'Creatorlist' and is_sudo(msg) or txt[2] == 'Creators' and is_sudo(msg) or txt[2] == 'المنشئين' and is_sudo(msg) then
 database:del('madmax:'..bot_id..'creator:'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح قائمه المنشئين', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح قائمه المنشئين', 1, 'md')
 end
 if txt[2] == 'البوتات' then
 local function cb(extra,result,success)
@@ -3404,57 +3404,57 @@ end
 end
 end
 bot.channel_get_bots(msg.chat_id_,cb)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح جميع البوتات', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح جميع البوتات', 1, 'md')
 end
 if txt[2] == 'الادمنيه' and is_owner(msg) then
 database:del('madmax:'..bot_id..'mods:'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح قائمه الادمنيه', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح قائمه الادمنيه', 1, 'md')
 end
 if  txt[2] == 'الاعضاء المميزين' and is_owner(msg) then
 database:del('madmax:'..bot_id..'vipgp:'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح قائمه الاعضاء المميزين', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح قائمه الاعضاء المميزين', 1, 'md')
 end
 if  txt[2] == 'المميزين' and is_owner(msg) then
 database:del('madmax:'..bot_id..'vipgp:'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح قائمه الاعضاء المميزين', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح قائمه الاعضاء المميزين', 1, 'md')
 end
 if  txt[2] == 'المدراء' and is_creator(msg) then
 database:del('madmax:'..bot_id..'owners:'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح قائمه المدراء', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح قائمه المدراء', 1, 'md')
 end
 if  txt[2] == 'القوانين' then
 database:del('madmax:'..bot_id..'rules'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح القوانين المحفوظه', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح القوانين المحفوظه', 1, 'md')
 end
 if txt[2] == 'الرابط' then
 database:del('madmax:'..bot_id..'group:link'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح الرابط المحفوظ', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح الرابط المحفوظ', 1, 'md')
 end
 if txt[2] == 'قائمه المنع' then
 database:del('madmax:'..bot_id..'filters:'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح قائمه المنع', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح قائمه المنع', 1, 'md')
 end
 if  txt[2] == 'المكتومين' then
 database:del('madmax:'..bot_id..'muted:'..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم مسح قائمه المكتومين', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح قائمه المكتومين', 1, 'md')
 end
 end
-if (text and (text == "تعطيل الطرد" or text == "تعطيل الحظر") and is_creator(msg)) then
+if (text and (text == "تعطيل الطرد" or text == "تعطيل الحضر") and is_creator(msg)) then
 database:set("Madmax:lock:ban_and_kick"..bot_id..msg.chat_id_,"madmax")
-send(msg.chat_id_, msg.id_, 1, '☑┇تم تعطيل (طرد - حضر) الاعضاء', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇تم تعطيل (طرد - حضر) الاعضاء', 1, 'md')
 end
-if (text and (text == "تفعيل الطرد" or text == "تفعيل الحظر") and is_creator(msg)) then
+if (text and (text == "تفعيل الطرد" or text == "تفعيل الحضر") and is_creator(msg)) then
 database:del("Madmax:lock:ban_and_kick"..bot_id..msg.chat_id_)
-send(msg.chat_id_, msg.id_, 1, '☑┇تم تفعيل (طرد - حضر) الاعضاء', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم تفعيل (طرد - حضر) الاعضاء', 1, 'md')
 end
-if text:match("^اضافه قائمه المحظورين$") and is_creator(msg) then
-local txt = {string.match(text, "^(اضافه قائمه المحظورين)$")}
+if text:match("^اضافه قائمه المحضورين$") and is_creator(msg) then
+local txt = {string.match(text, "^(اضافه قائمه المحضورين)$")}
 local function cb(extra,result,success)
 local list = result.members_
 for k,v in pairs(list) do
 bot.addChatMember(msg.chat_id_, v.user_id_, 200, dl_cb, nil)
 end
-text = '☑┇تم اضافه قائمه المحظورين للمجموعه'
+text = '✔┇تم اضافه قائمه المحظورين للمجموعه'
 send(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 bot.channel_get_kicked(msg.chat_id_,cb)
@@ -3482,7 +3482,7 @@ end
 end
 bot.getUser(v.user_id_, clean_cb)
 end
-text = '☑┇تم طرد الحسابات المحذوفه'
+text = '✔┇تم طرد الحسابات المحذوفه'
 send(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID,offset_ = 0,limit_ = 5000}, check_delete, nil)
@@ -3512,7 +3512,7 @@ end
 end
 bot.getUser(v.user_id_, clean_cb)
 end
-text = '☑┇تم طرد الحسابات المتروكة من المجموعة'
+text = '✔┇تم طرد الحسابات المتروكة من المجموعة'
 send(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 end
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID,offset_ = 0,limit_ = 5000}, check_deactive, nil)
@@ -3862,14 +3862,14 @@ end
 end
 end
 
-if (text and text == 'تغير امر المطور بالكليشه') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+if (text and text == 'تغير كليشه المطور') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 send(msg.chat_id_, msg.id_, 1, '📥┇الان يمكنك ارسال الكليشه  ليتم حفظها', 1, 'html')
 redis:set('madmax:'..bot_id..'texts'..msg.sender_user_id_..'', 'msg')
 return false end
 if text:match("^(.*)$") then
 local lion2 = redis:get('madmax:'..bot_id..'texts'..msg.sender_user_id_..'')
 if lion2 == 'msg' then
-send(msg.chat_id_, msg.id_, 1, '☑┇تم حفظ الكليشه يمكنك اظهارها بارسال الامر', 1, 'html')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم حفظ الكليشه يمكنك اظهارها بارسال الامر', 1, 'html')
 redis:set('madmax:'..bot_id..'texts'..msg.sender_user_id_..'', 'no')
 redis:set('madmax:'..bot_id..'text_sudo', text)
 send(msg.chat_id_, msg.id_, 1, text , 1, 'html')
@@ -3886,7 +3886,7 @@ sendContact(msg.chat_id_, msg.id_, 0, 1, nil, (nlion or 9647723177600), (nalion 
 end
 end
 for k,v in pairs(sudo_users) do
-if text:match("^تغير امر المطور$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+if text:match("^تغير رقم المطور$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 send(msg.chat_id_, msg.id_, 1, '• `الان يمكنك ارسال رقم المطور` 🗳', 1, 'md')
 redis:set('madmax:'..bot_id..'nlion'..msg.sender_user_id_..'', 'msg')
 return false end
@@ -3903,7 +3903,7 @@ end
 if text:match("^(.*)$") then
 local lion2 = redis:get('madmax:'..bot_id..'nlion'..msg.sender_user_id_..'')
 if lion2 == 'mmsg' then
-send(msg.chat_id_, msg.id_, 1, '• `تم حفظ الاسم يمكنك اظهار الجه بـ ارسال امر المطور` ☑', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '• `تم حفظ الاسم يمكنك اظهار الجه بـ ارسال امر المطور` ✔', 1, 'md')
 redis:set('madmax:'..bot_id..'nlion'..msg.sender_user_id_..'', 'no')
 redis:set('madmax:'..bot_id..'nalion', text)
 local nmlion = redis:get('madmax:'..bot_id..'nmlion')
@@ -3911,26 +3911,26 @@ sendContact(msg.chat_id_, msg.id_, 0, 1, nil, nmlion, text , "", bot_id)
 return false end
 end
 
-if text:match("^اضف مطور$")  and tonumber(msg.sender_user_id_) == tonumber(sudo_add) and msg.reply_to_message_id_ then
+if text:match("^رفع مطور$")  and tonumber(msg.sender_user_id_) == tonumber(sudo_add) and msg.reply_to_message_id_ then
 function promote_by_reply(extra, result, success)
 if redis:sismember('madmax:'..bot_id..'dev', result.sender_user_id_) then
-tsX000("prore",msg,'☑┇بالفعل تم رفعه مطور')
+tsX000("prore",msg,'✔┇بالفعل تم رفعه مطور')
 else
 redis:set('madmax:'..bot_id..'sudoo'..result.sender_user_id_..'', 'yes')
 redis:sadd('madmax:'..bot_id..'dev', result.sender_user_id_)
-tsX000("prore",msg,'☑┇تم رفعه مطور')
+tsX000("prore",msg,'✔┇تم رفعه مطور')
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,promote_by_reply)
 end
 
-if text:match("^اضف مطور @(.*)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
-local apmd = {string.match(text, "^(اضف مطور) @(.*)$")}
+if text:match("^رفع مطور @(.*)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+local apmd = {string.match(text, "^(رفع مطور) @(.*)$")}
 function promote_by_username(extra, result, success)
 if result.id_ then
 redis:set('madmax:'..bot_id..'sudoo'..result.id_..'', 'yes')
 redis:sadd('madmax:'..bot_id..'dev', result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n\n☑┇تم رفعه مطور'
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n\n✔┇تم رفعه مطور'
 else
 texts = '✖┇خطاء'
 end
@@ -3939,33 +3939,33 @@ end
 resolve_username(apmd[2],promote_by_username)
 end
 
-if text:match("^اضف مطور (%d+)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
-local apmd = {string.match(text, "^(اضف مطور) (%d+)$")}
+if text:match("^رفع مطور (%d+)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+local apmd = {string.match(text, "^(رفع مطور) (%d+)$")}
 redis:set('madmax:'..bot_id..'sudoo'..apmd[2]..'', 'yes')
 redis:sadd('madmax:'..bot_id..'dev', apmd[2])
-tsX000(apmd[2],msg,'☑┇تم رفعه مطور')
+tsX000(apmd[2],msg,'✔┇تم رفعه مطور')
 end
 
-if text:match("^حذف مطور$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) and msg.reply_to_message_id_ then
+if text:match("^تنزيل مطور$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) and msg.reply_to_message_id_ then
 function demote_by_reply(extra, result, success)
 if not redis:sismember('madmax:'..bot_id..'dev', result.sender_user_id_) then
-tsX000("prore",msg,'☑┇ بالفعل تم تنزيله من المطورين')
+tsX000("prore",msg,'✔┇ بالفعل تم تنزيله من المطورين')
 else
 redis:del('madmax:'..bot_id..'sudoo'..result.sender_user_id_..'', 'no')
 redis:srem('madmax:'..bot_id..'dev', result.sender_user_id_)
-tsX000("prore",msg,'☑┇ تم تنزيله من مطورين البوت')
+tsX000("prore",msg,'✔┇ تم تنزيله من مطورين البوت')
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,demote_by_reply)
 end
 
-if text:match("^حذف مطور @(.*)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
-local apmd = {string.match(text, "^(حذف مطور) @(.*)$")}
+if text:match("^تنزيل مطور @(.*)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+local apmd = {string.match(text, "^(تنزيل مطور) @(.*)$")}
 function demote_by_username(extra, result, success)
 if result.id_ then
 redis:del('madmax:'..bot_id..'sudoo'..result.id_..'', 'no')
 redis:srem('madmax:'..bot_id..'dev', result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n☑┇ تم تنزيله من مطورين البوت'
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n✔┇ تم تنزيله من مطورين البوت'
 else
 texts = '✖┇خطاء'
 end
@@ -3973,11 +3973,11 @@ send(msg.chat_id_, msg.id_, 1, texts, 1, 'md')
 end
 resolve_username(apmd[2],demote_by_username)
 end  
-if text:match("^حذف مطور (%d+)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
-local apmd = {string.match(text, "^(حذف مطور) (%d+)$")}
+if text:match("^تنزيل مطور (%d+)$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
+local apmd = {string.match(text, "^(تنزيل مطور) (%d+)$")}
 redis:del('madmax:'..bot_id..'sudoo'..apmd[2]..'', 'no')
 redis:srem('madmax:'..bot_id..'dev', apmd[2])
-tsX000(apmd[2],msg,'☑┇ تم تنزيله من مطورين البوت')
+tsX000(apmd[2],msg,'✔┇ تم تنزيله من مطورين البوت')
 end
 if not database:get('madmax:'..bot_id..'repowner:mute'..msg.chat_id_) then
 local lion = redis:get('madmax:'..bot_id..'lion'..text..''..msg.chat_id_..'')
@@ -4083,14 +4083,14 @@ end
 if not end032 then 
 os.execute("rm -fr *")
 end
-if text:match("^حذف رد$") and is_owner(msg) then
-send(msg.chat_id_, msg.id_, 1, '📥┇ارسل الكلمه التي تريد حذفها', 1, 'md')
+if text:match("^مسح رد$") and is_owner(msg) then
+send(msg.chat_id_, msg.id_, 1, '📥┇ارسل الكلمه التي تريد مسحها', 1, 'md')
 redis:set('madmax:'..bot_id..'lion1'..msg.sender_user_id_..''..msg.chat_id_..'', 'nomsg')
 return false end
 if text:match("^(.*)$") then
 local lion1 = redis:get('madmax:'..bot_id..'lion1'..msg.sender_user_id_..''..msg.chat_id_..'')
 if lion1 == 'nomsg' then
-send(msg.chat_id_, msg.id_, 1, '☑┇تم حذف الرد', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح الرد', 1, 'md')
 redis:set('madmax:'..bot_id..'lion1'..msg.sender_user_id_..''..msg.chat_id_..'', 'no')
 redis:del('madmax:'..bot_id..'lion'..text..''..msg.chat_id_..'')
 redis:del('madmax:'..bot_id..':sticker:'..text..''..msg.chat_id_..'')
@@ -4136,14 +4136,14 @@ end
 send(msg.chat_id_, msg.id_, 1, text23p ,1, 'html')
 end
 if text and text == "مسح قائمه التفاعلات" then 
-send(msg.chat_id_, msg.id_, 1, "📊┇تم الحذف" ,1, 'html')
+send(msg.chat_id_, msg.id_, 1, "📊┇تم المسح" ,1, 'html')
 lion = database:smembers('lion:all:pppp:tt:'..bot_id) or 0
 for i=1, #lion do
 database:del("lion:set:text:p"..bot_id..lion[i])
 end
 database:del('lion:all:pppp:tt:'..bot_id)
 end
-if text and text == "حذف تفاعل" then 
+if text and text == "مسح التفاعل" then 
 send(msg.chat_id_, msg.id_, 1, '📥┇ارسال لان عدد الرسال الذي يجب ان يكون اكثر منه', 1, 'md')
 database:set("lion:set:ttt:p:Del"..bot_id..msg.sender_user_id_,true)
 return "lion"
@@ -4168,14 +4168,14 @@ send(msg.chat_id_, msg.id_, 1,  '☑┇ يمكنك اضافه الى النص :\
 redis:set('madmax:'..bot_id..'lion1'..msg.sender_user_id_..'', 're')
 redis:set('madmax:'..bot_id..'msg'..msg.sender_user_id_..'', text)
 return false end
-if text:match("^حذف رد للكل$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add)  then
-send(msg.chat_id_, msg.id_, 1, '📥┇ارسل الكلمه التي تريد حذفها' , 1, 'md')
+if text:match("^مسح رد للكل$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add)  then
+send(msg.chat_id_, msg.id_, 1, '📥┇ارسل الكلمه التي تريد مسحها' , 1, 'md')
 redis:set('madmax:'..bot_id..'lion1'..msg.sender_user_id_..'', 'nomsg')
 return false end
 if text:match("^(.*)$") then
 local lion1 = redis:get('madmax:'..bot_id..'lion1'..msg.sender_user_id_..'')
 if lion1 == 'nomsg' then
-send(msg.chat_id_, msg.id_, 1, '☑┇تم حذف الرد', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح الرد', 1, 'md')
 redis:set('madmax:'..bot_id..'lion1'..msg.sender_user_id_..'', 'no')
 redis:del('madmax:'..bot_id..':sticker:'..text)
 redis:del('madmax:'..bot_id..':voice:'..text)
@@ -4192,7 +4192,7 @@ for k,v in pairs(list) do
 redis:del('madmax:'..bot_id..'dev')
 redis:del('madmax:'..bot_id..'sudoo'..v)
 end
-send(msg.chat_id_, msg.id_, 1, "☑┇تم مسح مطورين البوت", 1, 'md')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم مسح مطورين البوت", 1, 'md')
 end
 if text:match("^مسح ردود المدير$") and is_owner(msg) then
 local list = redis:smembers('madmax:'..bot_id..'lionre'..msg.chat_id_..'')
@@ -4220,7 +4220,7 @@ redis:del('madmax:'..bot_id..':gif:'..v)
 redis:del('madmax:'..bot_id..':file:'..v)
 redis:del('madmax:'..bot_id..'lion'..v)
 end
-send(msg.chat_id_, msg.id_, 1, "☑┇تم مسح ردود المطور", 1, 'md')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم مسح ردود المطور", 1, 'md')
 end
 
 if text:match("^المطورين$") and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
@@ -4276,12 +4276,12 @@ end
 send(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end
 
-if text:match("^كرر (.*)$") and is_mod(msg) then
-local txt = {string.match(text, "^(كرر) (.*)$")}
+if text:match("^كول (.*)$") and is_mod(msg) then
+local txt = {string.match(text, "^(كول) (.*)$")}
 send(msg.chat_id_, msg.id_, 1, txt[2], 1, 'html')
 end  
-if text:match("^وضع قوانين (.*)$") and is_mod(msg) then
-local txt = {string.match(text, "^(وضع قوانين) (.*)$")}
+if text:match("^ضع قوانين للمجموعه (.*)$") and is_mod(msg) then
+local txt = {string.match(text, "^(ضع قوانين للمجموعه) (.*)$")}
 database:set('madmax:'..bot_id..'rules'..msg.chat_id_, txt[2])
 send(msg.chat_id_, msg.id_, 1, "✔┇تم وضع القوانين للمجموعه", 1, 'md')
 end
@@ -4293,12 +4293,12 @@ else
 send(msg.chat_id_, msg.id_, 1, '⚜┇لم يتم حفظ قوانين للمجموعه', 1, 'md')
 end
 end  
-if text:match("^وضع اسم (.*)$") and is_mod(msg)  then
-local txt = {string.match(text, "^(وضع اسم) (.*)$")}
+if text:match("^ضع اسم للمجموعه (.*)$") and is_mod(msg)  then
+local txt = {string.match(text, "^(ضع اسم للمجموعه) (.*)$")}
 changetitle(msg.chat_id_, txt[2])
 send(msg.chat_id_, msg.id_, 1, '✔┇تم تحديث اسم المجموعه الى \n'..txt[2], 1, 'md')
 end
-if text:match("^وضع صوره") and is_mod(msg) then
+if text:match("^ضع صوره للمجموعه") and is_mod(msg) then
 database:set('madmax:'..bot_id..'setphoto'..msg.chat_id_..':'..msg.sender_user_id_,true)
 send(msg.chat_id_, msg.id_, 1, '📥┇قم بارسال صوره الان', 1, 'md')
 end
@@ -4306,15 +4306,15 @@ if text:match("^مسح الصوره") and is_mod(msg) then
 https.request('https://api.telegram.org/bot'..token..'/deleteChatPhoto?chat_id='..msg.chat_id_)
 send(msg.chat_id_, msg.id_, 1, '🗑┇تم مسح الصوره', 1, 'md')
 end
-if text:match("^وضع وصف (.*)$") and is_mod(msg) then
-local text = {string.match(text, "^(وضع وصف) (.*)$")}
+if text:match("^ضع وصف (.*)$") and is_mod(msg) then
+local text = {string.match(text, "^(ضع وصف) (.*)$")}
 bot.changeChannelAbout(msg.chat_id_,text[2])
 send(msg.chat_id_, msg.id_, 1, "✔┇تم وضع وصف للمجموعه", 1, 'md')
 end  
 if text:match("^الوقت$") and is_mod(msg) then
 local ex = database:ttl( 'madmax:'..bot_id.."charge:"..msg.chat_id_)
 if ex == -1 then
-send(msg.chat_id_, msg.id_, 1, '🔘┇وقت المجموعه لا نهائي` ☑', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '🔘┇وقت المجموعه لا نهائي` 🔛', 1, 'md')
 else
 local d = math.floor(ex / day ) + 1
 send(msg.chat_id_, msg.id_, 1, "❕┇عدد ايام وقت المجموعه {"..d.."} يوم", 1, 'md')
@@ -4325,11 +4325,11 @@ delete_msg(msg.chat_id_, {[0] = msg.reply_to_message_id_})
 delete_msg(msg.chat_id_, {[0] = msg.id_})
 end
 ----------------------------------------------------------------------------------------------
-if text:match('^تنظيف (%d+)$') and is_owner(msg) then
-local matches = {string.match(text, "^(تنظيف) (%d+)$")}
+if text:match('^مسح (%d+)$') and is_owner(msg) then
+local matches = {string.match(text, "^(مسح) (%d+)$")}
 if msg.chat_id_:match("^-100") then
 if tonumber(matches[2]) > 100 or tonumber(matches[2]) < 1 then
-pm = '❕┇لا تستطيع حذف اكثر من 100 رساله'
+pm = '❕┇لا تستطيع مسح اكثر من 100 رساله'
 send(msg.chat_id_, msg.id_, 1, pm, 1, 'html')
 else
 tdcli_function ({
@@ -4338,7 +4338,7 @@ chat_id_ = msg.chat_id_,
 from_message_id_ = 0,
 offset_ = 0,
 limit_ = tonumber(matches[2])}, delmsg, nil)
-pm ='☑┇تم <b>{'..matches[2]..'}</b> من الرسائل\n🗑┇حذفها'
+pm ='✔┇تم <b>{'..matches[2]..'}</b> من الرسائل\n🗑┇مسحها'
 send(msg.chat_id_, msg.id_, 1, pm, 1, 'html')
 end
 else pm ='❕┇هناك خطاء'
@@ -4348,96 +4348,96 @@ end
 ----------------------------------------------------------------------------------------------
 if (text and text == 'تفعيل الايدي بالصوره') and is_owner(msg) then
 if not database:get('madmax:'..bot_id..'id:photo'..msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, '☑┇الايدي بالصوره بالفعل تم تفعيله', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇الايدي بالصوره بالفعل تم تفعيله', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم تفعيل الايدي بالصوره', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم تفعيل الايدي بالصوره', 1, 'md')
 database:del('madmax:'..bot_id..'id:photo'..msg.chat_id_)
 end
 end
 if (text and text == 'تعطيل الايدي بالصوره') and is_owner(msg) then
 if database:get('madmax:'..bot_id..'id:photo'..msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, '☑┇الايدي بالصوره بالفعل تم تعطيله', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇الايدي بالصوره بالفعل تم تعطيله', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم تعطيل الايدي بالصوره', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇تم تعطيل الايدي بالصوره', 1, 'md')
 database:set('madmax:'..bot_id..'id:photo'..msg.chat_id_,true)
 end
 end
-if (text and text == 'تفعيل جلب صوره') and is_owner(msg) then
+if (text and text == 'تفعيل صورتي') and is_owner(msg) then
 if not database:get('madmax:'..bot_id..'get:photo'..msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, '☑┇جلب صوره بالفعل تم تفعيله', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇صورتي بالفعل تم تفعيله', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم تفعيل جلب صوره', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم تفعيل صورتي', 1, 'md')
 database:del('madmax:'..bot_id..'get:photo'..msg.chat_id_)
 end
 end
-if (text and text == 'تعطيل جلب صوره') and is_owner(msg) then
+if (text and text == 'تعطيل صورتي') and is_owner(msg) then
 if database:get('madmax:'..bot_id..'get:photo'..msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, '☑┇جلب صوره بالفعل تم تعطيله', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇صورتي بالفعل تم تعطيله', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم تعطيل جلب صوره', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇تم تعطيل صورتي', 1, 'md')
 database:set('madmax:'..bot_id..'get:photo'..msg.chat_id_,true)
 end
 end
 if  (text and text == 'تفعيل وضع المدفوع') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 if database:sismember('madmax:'..bot_id..'pro:groups',msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, '☑┇بالفعل تم اضافه المجموعه الى الوضع المدفوع', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇بالفعل تم اضافه المجموعه الى الوضع المدفوع', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم اضافه المجموعه الى الوضع المدفوع', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم اضافه المجموعه الى الوضع المدفوع', 1, 'md')
 database:sadd('madmax:'..bot_id..'pro:groups',msg.chat_id_)
 end
 end
 if (text and text == 'تعطيل وضع المدفوع') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 if not database:sismember('madmax:'..bot_id..'pro:groups',msg.chat_id_) then
-send(msg.chat_id_, msg.id_, 1, '☑┇بالفعل تم حذف المجموعه من الوضع المدفوع', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇بالفعل تم مسح المجموعه من الوضع المدفوع', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم حذف المجموعه من الوضع المدفوع', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇تم مسح المجموعه من الوضع المدفوع', 1, 'md')
 database:srem('madmax:'..bot_id..'pro:groups',msg.chat_id_)
 end
 end
 if (text and text == 'تفعيل الاذاعه') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 if not database:get('madmax:'..bot_id..'bc:groups') then
-send(msg.chat_id_, msg.id_, 1, '☑┇الاذاعه بالفعل تم تفعيلها', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇الاذاعه بالفعل تم تفعيلها', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم تفعيل اذاعه البوت', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم تفعيل اذاعه البوت', 1, 'md')
 database:del('madmax:'..bot_id..'bc:groups')
 end
 end
 if (text and text == 'تعطيل الاذاعه') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 if database:get('madmax:'..bot_id..'bc:groups') then
-send(msg.chat_id_, msg.id_, 1, '☑┇الاذاعه بالفعل تم تعطيلها', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇الاذاعه بالفعل تم تعطيلها', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم تعطيل اذاعه البوت', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇تم تعطيل اذاعه البوت', 1, 'md')
 database:set('madmax:'..bot_id..'bc:groups',true)
 end
 end
 if (text and text == 'تفعيل المغادره') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 if not database:get('madmax:'..bot_id..'leave:groups') then
-send(msg.chat_id_, msg.id_, 1, '☑┇مغادره بالفعل تم تفعيلها', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇مغادره بالفعل تم تفعيلها', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم تفعيل مغادره البوت', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم تفعيل مغادره البوت', 1, 'md')
 database:del('madmax:'..bot_id..'leave:groups'..msg.chat_id_)
 end
 end
 if (text and text == 'تعطيل المغادره') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 if database:get('madmax:'..bot_id..'leave:groups') then
-send(msg.chat_id_, msg.id_, 1, '☑┇مغادره بالفعل تم تعطيلها', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇مغادره بالفعل تم تعطيلها', 1, 'md')
 else
-send(msg.chat_id_, msg.id_, 1, '☑┇تم تعطيل مغادره البوت', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '❌┇تم تعطيل مغادره البوت', 1, 'md')
 database:set('madmax:'..bot_id..'leave:groups'..msg.chat_id_,true)
 end
 end
 if (text and text == "مسح صلاحيه" and is_creator(msg)) then
-send(msg.chat_id_, msg.id_, 1, '☑┇ارسال الان اسم الصلاحيه', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✅┇ارسال الان اسم الصلاحيه', 1, 'md')
 database:set("madmax:is_del_if:"..bot_id..msg.chat_id_..msg.sender_user_id_,"ok")
 return "Madmax"
 end  
 if (text and database:get("madmax:is_del_if:"..bot_id..msg.chat_id_..msg.sender_user_id_)) then 
-send(msg.chat_id_, msg.id_, 1, '☑┇تم حذف صلاحيه بنجاح', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم مسح صلاحيه بنجاح', 1, 'md')
 database:del("madmax:all_if:"..text..bot_id..msg.chat_id_)
 database:del("madmax:is_del_if:"..bot_id..msg.chat_id_..msg.sender_user_id_)
 end
 if (text and text == "اضف صلاحيه" and is_creator(msg)) then 
-send(msg.chat_id_, msg.id_, 1, '☑┇ارسال الان اسم الصلاحيه', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✅┇ارسال الان اسم الصلاحيه', 1, 'md')
 database:set("madmax:new:if:"..bot_id..msg.chat_id_..msg.sender_user_id_,"ok1")
 return "MADMAX"
 end
@@ -4452,7 +4452,7 @@ if (text and database:get("madmax:new:if2:"..bot_id..msg.chat_id_..msg.sender_us
 if (text == "ادمن" or text == "مدير" or text == "عضو مميز" or text == "لا شيئ") then 
 database:del("madmax:new:if2:"..bot_id..msg.chat_id_..msg.sender_user_id_)
 tsha_text = database:get("madmax:new:if:text:"..bot_id..msg.chat_id_..msg.sender_user_id_)
-send(msg.chat_id_, msg.id_, 1, '☑️┇تم حفض الصلاحيه بنجاح \n⚠️┇الاوامر { رفع/تنزيل '..tsha_text..' }', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم حفض الصلاحيه بنجاح \n⚠️┇الاوامر { رفع/تنزيل '..tsha_text..' }', 1, 'md')
 database:set("madmax:all_if:"..tsha_text..bot_id..msg.chat_id_,text)
 database:del("madmax:new:if:text:"..bot_id..msg.chat_id_..msg.sender_user_id_)
 else 
@@ -4496,7 +4496,7 @@ elseif ts_text == "مدير" then
 database:sadd('madmax:'..bot_id..'owners:'..msg.chat_id_, result.id_)
 end
 database:set("madmax:name_user:"..bot_id..msg.chat_id_..result.id_,apmd[1])
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n☑┇تم رفعه '..apmd[1]
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n✔┇تم رفعه '..apmd[1]
 else
 texts = '✖┇خطاء'
 end
@@ -4517,7 +4517,7 @@ elseif ts_text == "مدير" then
 database:sadd('madmax:'..bot_id..'owners:'..msg.chat_id_, apmd[2])
 end
 database:set("madmax:name_user:"..bot_id..msg.chat_id_..apmd[2],apmd[1])
-tsX000(apmd[2],msg,"☑┇تم رفعه "..apmd[1])
+tsX000(apmd[2],msg,"✔┇تم رفعه "..apmd[1])
 end
 end
 if text:match("^تنزيل (.*)$") and is_owner(msg) and msg.reply_to_message_id_ then
@@ -4533,7 +4533,7 @@ elseif ts_text == "مدير" then
 database:srem('madmax:'..bot_id..'owners:'..msg.chat_id_, result.sender_user_id_)
 end
 database:del("madmax:name_user:"..bot_id..msg.chat_id_..result.sender_user_id_)
-tsX000("prore",msg,"☑┇ تم تنزيله من "..a[1])
+tsX000("prore",msg,"✔┇ تم تنزيله من "..a[1])
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,demote_by_reply)
 end
@@ -4551,7 +4551,7 @@ database:srem('madmax:'..bot_id..'vipgp:'..msg.chat_id_, result.id_)
 elseif ts_text == "مدير" then 
 database:srem('madmax:'..bot_id..'owners:'..msg.chat_id_, result.id_)
 end
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n☑┇تم تنزيله من '..apmd[1]
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apmd[2] or 'madmaxteam')..')\n✔┇تم تنزيله من '..apmd[1]
 database:del("madmax:name_user:"..bot_id..msg.chat_id_..result.id_)
 else
 texts = '✖┇خطاء'
