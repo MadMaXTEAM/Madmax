@@ -898,6 +898,40 @@ function TSlocks(msg) -- Function locks && unlocks
 local text = msg.content_.text_
 if text then
 --         »»               Start madmax lock                       ««              --
+if (text == "قفل الكل") then
+local tsX_o = database:get("lock_all:MAX"..msg.chat_id_..bot_id)
+if tsX_o then
+tsX000("lock",msg,"✔: خاصيه التأكيد\n🔒: تم قفل الكل •")
+else
+tsX000("lock",msg,"✔: خاصيه القفل\n🔒: تم قفل الكل •")
+database:set("lock_media:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_audeo:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_video:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_photo:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_stecker:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_voice:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_gif:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_note:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_contact:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_pin:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_fwd:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_inline:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_mark:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_files:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_lllll:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_edit:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_word:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("MAX:lo:edit:new:"..bot_id..msg.chat_id_,"ok")
+database:set("lock_sarha:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_tag:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_link:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_username:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_new:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_botAndBan:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_bot:MAX"..msg.chat_id_..bot_id,"ok")
+database:set("lock_note:MAX"..msg.chat_id_..bot_id,"ok")
+end
+end
 if (text == "قفل التاك") then
 local tsX_o = database:get("lock_tag:madmax"..msg.chat_id_..bot_id)
 if tsX_o then
@@ -3047,7 +3081,7 @@ text = "✖┇لايوجد مكتومين عام"
 end
 send(msg.chat_id_, msg.id_, 1, text, 1, 'html')
 end  
-if text:match("^ايدي$") and msg.reply_to_message_id_ ~= 0 then
+if text:match("^اايديه$") and msg.reply_to_message_id_ ~= 0 then
 function id_by_reply(extra, result, success)
 if not database:get('madmax:'..bot_id..'id:mute'..msg.chat_id_) then 
 local msgs = database:get('madmax:'..bot_id..'user:msgs'..msg.chat_id_..':'..result.sender_user_id_) or 0
@@ -3099,15 +3133,15 @@ madmax_oop = 'عضو مميز'
 else
 madmax_oop = 'عضو فقط'
 end
-send(msg.chat_id_, msg.id_, 1,"🔖┇ايدي ~⪼ `{"..result.sender_user_id_.."}`\n🗳┇موقعه ~⪼ {"..madmax_oop.."}\n📊┇عدد رسائل ~⪼ `{"..msgs.."}`\n📧┇عدد السحكات ~⪼ `{"..edit.."}`\n📚┇تفاعلك ~⪼ `{"..ilion_text.."}`", 1, 'md')
+send(msg.chat_id_, msg.id_, 1,"🔖┇ايديه ~⪼ `{"..result.sender_user_id_.."}`\n🗳┇موقعه ~⪼ {"..madmax_oop.."}\n📊┇عدد رسائله ~⪼ `{"..msgs.."}`\n📧┇عدد سحكاته ~⪼ `{"..edit.."}`\n📚┇تفاعله ~⪼ `{"..ilion_text.."}`", 1, 'md')
 else
 send(msg.chat_id_, msg.id_, 1,"`"..result.sender_user_id_.."`", 1, 'md')
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,id_by_reply)
 end  
-if text:match("^ايدي @(.*)$") then
-local ap = {string.match(text, "^(ايدي) @(.*)$")}
+if text:match("^ايديه @(.*)$") then
+local ap = {string.match(text, "^(ايديه) @(.*)$")}
 function id_by_username(extra, result, success)
 if result.id_ then
 if not database:get('madmax:'..bot_id..'id:mute'..msg.chat_id_) then 
@@ -3160,7 +3194,7 @@ madmax_oop = 'عضو مميز'
 else
 madmax_oop = 'عضو فقط'
 end
-texts = "🔖┇ايدي ~⪼ `{"..result.id_.."}`\n🗳┇موقعه ~⪼ {"..madmax_oop.."}\n📊┇عدد الرسائل ~⪼ `{"..msgs.."}`\n📧┇عدد السحكات ~⪼ `{"..edit.."}`\n📚┇تفاعلك ~⪼ `{"..ilion_text.."}`"
+texts = "🔖┇ايديه ~⪼ `{"..result.id_.."}`\n🗳┇موقعه ~⪼ {"..madmax_oop.."}\n📊┇عدد رسائله ~⪼ `{"..msgs.."}`\n📧┇عدد سحكاته ~⪼ `{"..edit.."}`\n📚┇تفاعله ~⪼ `{"..ilion_text.."}`"
 else
 texts = "`"..result.id_.."`"
 end
