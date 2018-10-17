@@ -722,7 +722,7 @@ end
 if database:get( 'madmax:'..bot_id.."charge:"..msg.chat_id_) then
 database:del( 'madmax:'..bot_id.."charge:"..msg.chat_id_)
 function madmax_info(k1,k2)
-send(msg.chat_id_, msg.id_, 1, info.."☑️┇تم تعطيل المجموعه {"..k2.title_.."}", 1, 'md')
+send(msg.chat_id_, msg.id_, 1, info.."❌┇تم تعطيل المجموعه {"..k2.title_.."}", 1, 'md')
 end
 openChat(msg.chat_id_,madmax_info)
 database:srem("madmax:gog"..bot_id, msg.chat_id_)
@@ -770,7 +770,7 @@ end
 if not database:get( 'madmax:'..bot_id.."charge:"..msg.chat_id_) then
 database:set( 'madmax:'..bot_id.."charge:"..msg.chat_id_,true)
 function madmax_info(k1,k2)
-send(msg.chat_id_, msg.id_, 1, info.."☑️┇تم تفعيل المجموعه {"..(k2.title_ or "").."}", 1, 'md')
+send(msg.chat_id_, msg.id_, 1, info.."✔┇تم تفعيل المجموعه {"..(k2.title_ or "").."}", 1, 'md')
 end
 openChat(msg.chat_id_,madmax_info)
 database:sadd("madmax:gog"..bot_id, msg.chat_id_)
@@ -824,7 +824,7 @@ end
 if not database:get( 'madmax:'..bot_id.."charge:"..msg.chat_id_) then
 database:set( 'madmax:'..bot_id.."charge:"..msg.chat_id_,true)
 function madmax_info(k1,k2)
-send(msg.chat_id_, msg.id_, 1, info.."☑️┇تم تفعيل المجموعه {"..(k2.title_ or "").."}", 1, 'md')
+send(msg.chat_id_, msg.id_, 1, info.."✔┇تم تفعيل المجموعه {"..(k2.title_ or "").."}", 1, 'md')
 end
 openChat(msg.chat_id_,madmax_info)
 function madmax_info2(k1,k2)
@@ -864,7 +864,7 @@ end
 if database:get( 'madmax:'..bot_id.."charge:"..msg.chat_id_) then
 database:del( 'madmax:'..bot_id.."charge:"..msg.chat_id_)
 function madmax_info(k1,k2)
-send(msg.chat_id_, msg.id_, 1, info.."☑️┇تم تعطيل المجموعه {"..k2.title_.."}", 1, 'md')
+send(msg.chat_id_, msg.id_, 1, info.."❌┇تم تعطيل المجموعه {"..k2.title_.."}", 1, 'md')
 end
 openChat(msg.chat_id_,madmax_info)
 database:srem("madmax:gog"..bot_id, msg.chat_id_)
@@ -2321,11 +2321,11 @@ if ck_mod(result.sender_user_id_, msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع حضر \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
 else
 if database:sismember(hash, result.sender_user_id_) then
-tsX000("prore",msg,"☑┇بالفعل تم حضره من المجموعه")
+tsX000("prore",msg,"✔┇بالفعل تم حضره من المجموعه")
 chat_kick(result.chat_id_, result.sender_user_id_)
 else
 database:sadd(hash, result.sender_user_id_)
-tsX000("prore",msg,"☑┇تم حضره من المجموعه")
+tsX000("prore",msg,"✅┇تم حضره من المجموعه")
 chat_kick(result.chat_id_, result.sender_user_id_)
 end
 end
@@ -2345,7 +2345,7 @@ if ck_mod(result.id_, msg.chat_id_) then
 send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع حضر \n🔘┇(مدراء،ادمنيه،اعضاء مميزين)البوت', 1, 'md')
 else
 database:sadd('madmax:'..bot_id..'banned:'..msg.chat_id_, result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apba[2] or 'madmaxteam')..')\n☑┇تم حضره من المجموعه'
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apba[2] or 'madmaxteam')..')\n✔┇تم حضره من المجموعه'
 chat_kick(msg.chat_id_, result.id_)
 end
 else
@@ -2367,7 +2367,7 @@ send(msg.chat_id_, msg.id_, 1, '❕┇لا تستطيع حضر \n🔘┇(مدر�
 else
 database:sadd('madmax:'..bot_id..'banned:'..msg.chat_id_, apba[2])
 chat_kick(msg.chat_id_, apba[2])  
-tsX000(apba[2],msg,"☑┇تم حضره من المجموعه")
+tsX000(apba[2],msg,"✅┇تم حضره من المجموعه")
 end
 end
 ----------------------------------------------unban--------------------------------------------
@@ -2375,10 +2375,10 @@ if text:match("^الغاء حضر$") and is_mod(msg) and msg.reply_to_message_id
 function unban_by_reply(extra, result, success)
 local hash =  'madmax:'..bot_id..'banned:'..msg.chat_id_
 if not database:sismember(hash, result.sender_user_id_) then
-tsX000("prore",msg,"☑┇بالفعل تم الغاء حضره من البوت")
+tsX000("prore",msg,"✔┇بالفعل تم الغاء حضره من البوت")
 else
 database:srem(hash, result.sender_user_id_)
-tsX000("prore",msg,"☑┇تم الغاء حضره من البوت")
+tsX000("prore",msg,"✅┇تم الغاء حضره من البوت")
 end
 end
 getMessage(msg.chat_id_, msg.reply_to_message_id_,unban_by_reply)
@@ -2396,7 +2396,7 @@ local apba = {string.match(text, "^(الغاء حضر) @(.*)$")}
 function unban_by_username(extra, result, success)
 if result.id_ then
 database:srem('madmax:'..bot_id..'banned:'..msg.chat_id_, result.id_)
-texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apba[2] or 'madmaxteam')..')\n☑┇تم الغاء حضره من البوت' 
+texts = '👤┇العضو ~⪼ ['..result.title_..'](t.me/'..(apba[2] or 'madmaxteam')..')\n✔┇تم الغاء حضره من البوت' 
 else
 texts = '✖┇خطاء'
 end
@@ -3057,21 +3057,21 @@ local user_msgs = msgs
 local ilion_text = "غير متفاعل"
 if user_msgs then 
 if tonumber(user_msgs) < 50 then 
-ilion_text = "غير متفاعل"
+ilion_text = "غير متفاعل😩"
 elseif tonumber(user_msgs) < 100 then 
-ilion_text = "آستمر بطل"
-elseif tonumber(user_msgs) < 1000 then 
-ilion_text = "متفآعل "
-elseif tonumber(user_msgs) < 2000 then 
-ilion_text = "عضو نشط"
-elseif tonumber(user_msgs) < 3000 then 
-ilion_text = "اقوئ تفاعل"
-elseif tonumber(user_msgs) < 4000 then 
-ilion_text = "عضو متفاعل قوي"
-elseif tonumber(user_msgs) < 5000 then 
-ilion_text = "جيد بتفاعل"
-elseif tonumber(user_msgs) > 5000 then 
-ilion_text = "متفاعل كلش"
+ilion_text = "آستمر بطل😇"
+elseif tonumber(user_msgs) < 150 then 
+ilion_text = "متفآعل😉"
+elseif tonumber(user_msgs) < 200 then 
+ilion_text = "عضو نشط😋"
+elseif tonumber(user_msgs) < 250 then 
+ilion_text = "اقوئ تفاعل😎"
+elseif tonumber(user_msgs) < 300 then 
+ilion_text = "عضو متفاعل قوي😍"
+elseif tonumber(user_msgs) < 350 then 
+ilion_text = "جيد بتفاعل😘"
+elseif tonumber(user_msgs) > 400 then 
+ilion_text = "متفاعل كلش🤩"
 end
 lion = database:smembers('lion:all:pppp:tt:'..bot_id) or 0
 if (lion or lion[1]) then 
@@ -3119,21 +3119,21 @@ local user_msgs = database:get('madmax:'..bot_id..'user:msgs'..msg.chat_id_..':'
 local ilion_text = "غير متفاعل"
 if user_msgs then 
 if tonumber(user_msgs) < 50 then 
-ilion_text = "غير متفاعل"
+ilion_text = "غير متفاعل😩"
 elseif tonumber(user_msgs) < 100 then 
-ilion_text = "آستمر بطل"
-elseif tonumber(user_msgs) < 1000 then 
-ilion_text = "متفآعل "
-elseif tonumber(user_msgs) < 2000 then 
-ilion_text = "عضو نشط"
-elseif tonumber(user_msgs) < 3000 then 
-ilion_text = "اقوئ تفاعل"
-elseif tonumber(user_msgs) < 4000 then 
-ilion_text = "عضو متفاعل قوي"
-elseif tonumber(user_msgs) < 5000 then 
-ilion_text = "جيد بتفاعل"
-elseif tonumber(user_msgs) > 5000 then 
-ilion_text = "متفاعل كلش"
+ilion_text = "آستمر بطل😇"
+elseif tonumber(user_msgs) < 150 then 
+ilion_text = "متفآعل😉"
+elseif tonumber(user_msgs) < 200 then 
+ilion_text = "عضو نشط😋"
+elseif tonumber(user_msgs) < 250 then 
+ilion_text = "اقوئ تفاعل😎"
+elseif tonumber(user_msgs) < 300 then 
+ilion_text = "عضو متفاعل قوي😍"
+elseif tonumber(user_msgs) < 350 then 
+ilion_text = "جيد بتفاعل😘"
+elseif tonumber(user_msgs) > 400 then 
+ilion_text = "متفاعل كلش🤩"
 end
 lion = database:smembers('lion:all:pppp:tt:'..bot_id) or 0
 if (lion or lion[1]) then 
@@ -3226,7 +3226,7 @@ if tonumber(floodt[2]) < 1 then
 send(msg.chat_id_, msg.id_, 1, '🔘┇ضع العدد من *{1}* الى  *{99999}*', 1, 'md')
 else
 database:set('madmax:'..bot_id..'flood:time:'..msg.chat_id_,floodt[2])
-send(msg.chat_id_, msg.id_, 1, '☑┇تم  ضع الزمن التكرار للعدد ~⪼  *{'..floodt[2]..'}*', 1, 'md')
+send(msg.chat_id_, msg.id_, 1, '✔┇تم  وضع الزمن التكرار للعدد ~⪼  *{'..floodt[2]..'}*', 1, 'md')
 end
 end
 if text:match("^الرابط$") then
@@ -3292,7 +3292,7 @@ if text:match("^الغاء منع (.*)$") and is_mod(msg) then
 local rws = {string.match(text, "^(الغاء منع) (.*)$")}
 local name = string.sub(rws[2], 1, 50)
 database:hdel('madmax:'..bot_id..'filters:'..msg.chat_id_, rws[2])
-send(msg.chat_id_, msg.id_, 1, "☑┇تم مسحها من لقائمه المنع\n🔘┇{"..rws[2].."}", 1, 'md')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم مسحها من لقائمه المنع\n🔘┇{"..rws[2].."}", 1, 'md')
 end  
 if (text and text == "مسح قائمه المحضورين" and is_creator(msg)) then 
 local function getChannelMembers(channel_id, filter, offset, limit, cb)
@@ -4283,7 +4283,7 @@ end
 if text:match("^ضع قوانين (.*)$") and is_mod(msg) then
 local txt = {string.match(text, "^(ضع قوانين) (.*)$")}
 database:set('madmax:'..bot_id..'rules'..msg.chat_id_, txt[2])
-send(msg.chat_id_, msg.id_, 1, "✔┇تم ضع القوانين للمجموعه", 1, 'md')
+send(msg.chat_id_, msg.id_, 1, "✔┇تم وضع القوانين للمجموعه", 1, 'md')
 end
 if text:match("^القوانين$") then
 local rules = database:get('madmax:'..bot_id..'rules'..msg.chat_id_)
@@ -4654,21 +4654,21 @@ local user_msgs = database:get('madmax:'..bot_id..'user:msgs'..msg.chat_id_..':'
 local ilion_text = "غير متفاعل"
 if user_msgs then 
 if tonumber(user_msgs) < 50 then 
-ilion_text = "غير متفاعل"
+ilion_text = "غير متفاعل😩"
 elseif tonumber(user_msgs) < 100 then 
-ilion_text = "آستمر بطل"
-elseif tonumber(user_msgs) < 1000 then 
-ilion_text = "متفآعل "
-elseif tonumber(user_msgs) < 2000 then 
-ilion_text = "عضو نشط"
-elseif tonumber(user_msgs) < 3000 then 
-ilion_text = "اقوئ تفاعل"
-elseif tonumber(user_msgs) < 4000 then 
-ilion_text = "عضو متفاعل قوي"
-elseif tonumber(user_msgs) < 5000 then 
-ilion_text = "جيد بتفاعل"
-elseif tonumber(user_msgs) > 5000 then 
-ilion_text = "متفاعل كلش"
+ilion_text = "آستمر بطل😇"
+elseif tonumber(user_msgs) < 150 then 
+ilion_text = "متفآعل😉"
+elseif tonumber(user_msgs) < 200 then 
+ilion_text = "عضو نشط😋"
+elseif tonumber(user_msgs) < 250 then 
+ilion_text = "اقوئ تفاعل😎"
+elseif tonumber(user_msgs) < 300 then 
+ilion_text = "عضو متفاعل قوي😍"
+elseif tonumber(user_msgs) < 350 then 
+ilion_text = "جيد بتفاعل😘"
+elseif tonumber(user_msgs) > 400 then 
+ilion_text = "متفاعل كلش🤩"
 end
 lion = database:smembers('lion:all:pppp:tt:'..bot_id) or 0
 if (lion or lion[1] and end032) then 
