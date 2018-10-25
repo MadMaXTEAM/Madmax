@@ -50,45 +50,43 @@ return var
 end
 local msg = data.message_
 text = msg.content_.text_
+if not database:get('MAX:'..bot_id..'rep:mute'..msg.chat_id_) then                       
+if text:match("^بوسه$") or text:match("^بعد بوسه$") or text:match("^ضل بوس$") then
+function hena(extra, result, success)
+if tonumber(result.sender_user_id_) == tonumber(bot_id) then 
+send(msg.chat_id_, msg.id_, 1, '• حياتي بس فهمني شون ابوس نفسي وتدلل 😔😂', 1, 'md') 
+return false  
+end  
+if tonumber(result.sender_user_id_) == tonumber(bot_owner) then  
+send(msg.chat_id_, msg.id_, 1, '• اموووووووواح احلا بوسه لمطوري 😻', 1, 'md')
+return false
+end 
+local keko = "• صار ستاذي راح اتماصص وياه 🙊😻" 
+send(msg.chat_id_, msg.id_, 1,faeder, 1, 'md') 
+local keko = {"• تعالي حياتي خل نتماصص 😻👏","• اممممووووواااااح لصق الشفه 😻","• امح امح امح امح بوسه لو عسل 😼😻"} 
+send(msg.chat_id_, result.id_, 1,''..keko[math.random(#keko)]..'', 1, 'md') 
+end 
+if tonumber(msg.reply_to_message_id_) == 0 then
+else 
+getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),hena)   
+end
+end
+if(text and text == 'بدأ اللعبه') and is_owner(msg) then
 if not database:get('MAX:'..bot_id..'rep:mute'..msg.chat_id_) then
-if text == 'حجر' then
-moody =
-'انا حجر🙃',      
-'"انا مقص🙃"',      
-'""انا ورقه🙃""',      
-send(msg.chat_id_, msg.id_, 1, moody, 1, 'md')
-  end
-if text == 'مقص' then
-moody =
-'انا مقص🙃',                          
-'"انا حجر🙃"',                          
-'""انا ورقه🙃""',                          
-send(msg.chat_id_, msg.id_, 1, moody, 1, 'md')
-  end
-if text == 'ورقه' then
-moody =
-'انا ورقه🙃',                                              
-'"انا مقص🙃"',                                              
-'""انا حجر🙃""',                                              
-send(msg.chat_id_, msg.id_, 1, moody, 1, 'md')
-  end
-  end
-  if(text and text == 'بدأ اللعبه') and is_owner(msg) then
-    if not database:get('MAX:'..bot_id..'rep:mute'..msg.chat_id_) then
-  send(msg.chat_id_, msg.id_, 1, '☑┇تم بدأ اللعبه الان اختر اما حجر او ورقه او مقص', 1, 'md')
-    else
-  send(msg.chat_id_, msg.id_, 1, '☑┇ اختر حجر ام مقص ام ورقه', 1, 'md')
-   database:del('MAX:'..bot_id..'rep:mute'..msg.chat_id_)
-  end
-  end
-  if(text and text == 'تعطيل اللعبه') and is_owner(msg) then
-    if database:get('MAX:'..bot_id..'rep:mute'..msg.chat_id_) then
-  send(msg.chat_id_, msg.id_, 1, '☑┇تم تعطيل اللعبه عاود اللعبه مرة اخرى اكتب بدأ اللعبه ', 1, 'md')
-  else
-  send(msg.chat_id_, msg.id_, 1, '☑┇تم تعطيل اللعبه عاود اللعبه مرة اخرى اكتب بدأ اللعبه ', 1, 'md')
-    database:set('MAX:'..bot_id..'rep:mute'..msg.chat_id_,true)
-  end
-    end
+send(msg.chat_id_, msg.id_, 1, '☑┇تم بدأ اللعبه الان اختر اما حجر او ورقه او مقص', 1, 'md')
+else
+send(msg.chat_id_, msg.id_, 1, '☑┇ اختر حجر ام مقص ام ورقه', 1, 'md')
+database:del('MAX:'..bot_id..'rep:mute'..msg.chat_id_)
+end
+end
+if(text and text == 'تعطيل اللعبه') and is_owner(msg) then
+if database:get('MAX:'..bot_id..'rep:mute'..msg.chat_id_) then
+send(msg.chat_id_, msg.id_, 1, '☑┇تم تعطيل اللعبه عاود اللعبه مرة اخرى اكتب بدأ اللعبه ', 1, 'md')
+else
+send(msg.chat_id_, msg.id_, 1, '☑┇تم تعطيل اللعبه عاود اللعبه مرة اخرى اكتب بدأ اللعبه ', 1, 'md')
+database:set('MAX:'..bot_id..'rep:mute'..msg.chat_id_,true)
+end
+end
 
 end
 return {
